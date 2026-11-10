@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Florzy Sales Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+  <style>
+    :root {
+      --navy: #14233b;
+      --blue: #2563eb;
+      --ink: #182230;
+      --muted: #64748b;
+      --line: #e5eaf1;
+      --bg: #f4f7fb;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .topbar {
+      height: 66px;
+      position: fixed;
+      z-index: 100;
+      top: 0; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      padding: 0 22px;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+    }
+    .brand { font-size: 18px; font-weight: 800; color: var(--navy); }
+    .brand span { color: var(--blue); }
+    .top-divider { height: 28px; width: 1px; background: var(--line); }
+    .page-title { font-size: 14px; font-weight: 650; color: #475569; }
+    .top-spacer { flex: 1; }
+    .scope-toggle {
+      display: flex; gap: 3px; padding: 4px;
+      border: 1px solid var(--line); border-radius: 11px; background: #f1f5f9;
+    }
+    .scope-btn {
+      border: none; background: transparent; color: #64748b;
+      padding: 8px 13px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+    }
+    .scope-btn.active { background: var(--white); color: var(--blue); box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12); }
+    .layout { display: flex; padding-top: 66px; min-height: 100vh; }
+    .sidebar {
+      width: 224px; position: fixed; top: 66px; bottom: 0; left: 0;
+      background: var(--navy); padding: 22px 12px; z-index: 80;
+    }
+    .nav-item {
+      display: flex; align-items: center; gap: 12px; padding: 12px;
+      border-radius: 11px; color: #c6d1e1; cursor: pointer; margin: 3px 0; font-size: 13px; font-weight: 600;
+    }
+    .nav-item.active { background: #244b85; color: var(--white); }
+    .content { margin-left: 224px; padding: 30px; width: calc(100% - 224px); }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 24px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .card-value { font-size: 26px; font-weight: 800; color: var(--ink); }
+    .page-loader { min-height: 60vh; display: flex; align-items: center; justify-content: center; gap: 12px; color: #64748b; }
+    .spinner { width: 22px; height: 22px; border: 2px solid #dbe3ef; border-top-color: var(--blue); border-radius: 50%; animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Florzy <span>Insights</span></div>
+    <div class="top-divider"></div>
+    <div class="page-title" id="topbarTitle">Overview</div>
+    <div class="top-spacer"></div>
+    <div class="scope-toggle">
+      <button class="scope-btn active" id="storeBtn" onclick="setScope('STORE')">Store</button>
+      <button class="scope-btn" id="combBtn" onclick="setScope('COMBINED')">Combined</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar">
+      <div class="nav-item active" onclick="showTab('overview')">▦ Overview</div>
+      <div class="nav-item" onclick="showTab('revenue')">↗ Revenue Trend</div>
+      <div class="nav-item" onclick="showTab('repperf')">◫ Rep Performance</div>
+      <div class="nav-item" onclick="showTab('conversion')">◎ Conversion</div>
+    </nav>
+
+    <main class="content">
+      <div id="loader" class="page-loader"><div class="spinner"></div> Loading snapshot…</div>
+      <div id="dashboardView" style="display:none;">
+        <div class="kpi-grid">
+          <div class="card"><div class="card-title">Total Revenue</div><div class="card-value" id="kpiTotalRev">₹0</div></div>
+          <div class="card"><div class="card-title">This Month Revenue</div><div class="card-value" id="kpiMonthRev">₹0</div></div>
+          <div class="card"><div class="card-title">Total Bookings</div><div class="card-value" id="kpiBookings">0</div></div>
+          <div class="card"><div class="card-title">Conversion Rate</div><div class="card-value" id="kpiConversion">0%</div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    var RAW_DATA = null;
+    var CURRENT_SCOPE = 'STORE';
+
+    window.addEventListener('load', function() {
+      // Direct CDN edge fetch from data.json
+      fetch('/data.json?v=' + Date.now())
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          RAW_DATA = data;
+          document.getElementById('loader').style.display = 'none';
+          document.getElementById('dashboardView').style.display = 'block';
+          renderKPIs();
+        })
+        .catch(function(err) {
+          document.getElementById('loader').innerHTML = '<div style="color:red">Snapshot data not loaded yet. Run sync script first.</div>';
+        });
+    });
+
+    function setScope(scope) {
+      CURRENT_SCOPE = scope;
+      document.getElementById('storeBtn').classList.toggle('active', scope === 'STORE');
+      document.getElementById('combBtn').classList.toggle('active', scope === 'COMBINED');
+      renderKPIs();
+    }
+
+    function renderKPIs() {
+      if (!RAW_DATA) return;
+      var overview = CURRENT_SCOPE === 'STORE' ? RAW_DATA.overviewStore : RAW_DATA.overviewCombined;
+      if (!overview || !overview.kpis) return;
+      document.getElementById('kpiTotalRev').textContent = '₹' + (overview.kpis.totalRevenue || 0).toLocaleString('en-IN');
+      document.getElementById('kpiMonthRev').textContent = '₹' + (overview.kpis.thisMonthRevenue || 0).toLocaleString('en-IN');
+      document.getElementById('kpiBookings').textContent = overview.kpis.totalBookings || 0;
+      document.getElementById('kpiConversion').textContent = (CURRENT_SCOPE === 'STORE' ? overview.kpis.storeConversion : overview.kpis.combinedConversion) + '%';
+    }
+  </script>
+</body>
+</html>
