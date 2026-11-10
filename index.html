@@ -10,35 +10,29 @@
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   <style>
     :root {
+      --orange-primary: #f97316;
+      --orange-dark: #ea580c;
+      --orange-light: #fff7ed;
+      --orange-border: #fed7aa;
       --navy: #0f172a;
-      --navy-sidebar: #0b1329;
-      --navy-card: #1e293b;
-      --blue-accent: #3b82f6;
-      --blue-hover: #2563eb;
-      --blue-subtle: #eff6ff;
-      --text-main: #0f172a;
+      --navy-sidebar: #111827;
+      --text-main: #1e293b;
       --text-muted: #64748b;
       --text-light: #94a3b8;
       --bg-main: #f8fafc;
+      --card-bg: #ffffff;
       --border-color: #e2e8f0;
-      --white: #ffffff;
       --success: #10b981;
+      --danger: #ef4444;
       --card-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background: var(--bg-main);
       color: var(--text-main);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -46,17 +40,15 @@
     .topbar {
       height: 68px;
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: var(--white);
+      top: 0; left: 0; right: 0;
+      background: var(--card-bg);
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       padding: 0 24px;
       gap: 16px;
       z-index: 100;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
     }
 
     .brand {
@@ -71,50 +63,38 @@
     }
 
     .brand-badge {
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      background: linear-gradient(135deg, var(--orange-primary), var(--orange-dark));
       color: #fff;
       font-size: 11px;
       font-weight: 800;
-      padding: 4px 8px;
-      border-radius: 6px;
+      padding: 5px 9px;
+      border-radius: 7px;
       letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(249, 115, 22, 0.35);
     }
 
-    .brand span {
-      color: var(--blue-accent);
-    }
+    .brand span { color: var(--orange-primary); }
+    .top-divider { height: 26px; width: 1px; background: var(--border-color); }
+    .page-title { font-size: 14px; font-weight: 700; color: var(--text-muted); }
+    .top-spacer { flex: 1; }
 
-    .top-divider {
-      height: 24px;
-      width: 1px;
-      background: var(--border-color);
-    }
-
-    .page-title {
-      font-size: 14px;
+    .sync-badge {
+      font-size: 11.5px;
       font-weight: 600;
       color: var(--text-muted);
-    }
-
-    .top-spacer {
-      flex: 1;
-    }
-
-    .last-sync-badge {
-      font-size: 11px;
-      color: var(--text-light);
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-right: 8px;
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
     }
-
     .sync-dot {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: var(--success);
       border-radius: 50%;
-      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
     }
 
     .scope-toggle {
@@ -124,39 +104,31 @@
       border-radius: 10px;
       border: 1px solid var(--border-color);
     }
-
     .scope-btn {
       border: none;
       background: transparent;
       padding: 6px 14px;
       border-radius: 7px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.15s ease;
     }
-
     .scope-btn.active {
-      background: var(--white);
-      color: var(--blue-hover);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      background: var(--card-bg);
+      color: var(--orange-dark);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
 
     /* MAIN LAYOUT */
-    .layout {
-      display: flex;
-      margin-top: 68px;
-      min-height: calc(100vh - 68px);
-    }
+    .layout { display: flex; margin-top: 68px; min-height: calc(100vh - 68px); }
 
     /* SIDEBAR */
     .sidebar {
       width: 240px;
       position: fixed;
-      top: 68px;
-      bottom: 0;
-      left: 0;
+      top: 68px; bottom: 0; left: 0;
       background: var(--navy-sidebar);
       padding: 24px 14px;
       overflow-y: auto;
@@ -165,8 +137,8 @@
     }
 
     .nav-label-head {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 10.5px;
+      font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       color: #64748b;
@@ -177,234 +149,201 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 11px 14px;
-      border-radius: 9px;
+      padding: 12px 14px;
+      border-radius: 10px;
       color: #94a3b8;
       cursor: pointer;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       font-size: 13px;
       font-weight: 600;
-      transition: all 0.18s ease;
+      transition: all 0.15s ease;
     }
-
-    .nav-item:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: #ffffff;
-    }
-
+    .nav-item:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
     .nav-item.active {
-      background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      background: linear-gradient(90deg, #ea580c 0%, #f97316 100%);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
     }
+    .nav-icon { font-size: 16px; width: 20px; text-align: center; }
 
-    .nav-icon {
-      font-size: 16px;
-      width: 20px;
-      display: inline-block;
-      text-align: center;
-    }
-
-    /* CONTENT WRAPPER */
+    /* CONTENT AREA */
     .content-area {
       margin-left: 240px;
       flex: 1;
-      padding: 32px;
-      max-width: 1540px;
+      padding: 30px;
+      max-width: 1560px;
     }
 
-    .tab-section {
-      display: none;
-    }
+    .tab-section { display: none; }
+    .tab-section.active { display: block; animation: tabFade 0.2s ease-out; }
+    @keyframes tabFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
-    .tab-section.active {
-      display: block;
-      animation: fadeIn 0.25s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* SECTION HEADER */
+    /* SECTION HEADERS */
     .section-head {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 14px;
     }
+    .section-head h1 { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.4px; }
+    .section-head p { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
 
-    .section-head h1 {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.5px;
+    /* CONTROLS BAR */
+    .filter-bar {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      box-shadow: var(--card-shadow);
     }
-
-    .section-head p {
+    .filter-group { display: flex; flex-direction: column; gap: 4px; }
+    .filter-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-muted); }
+    .filter-bar select, .filter-bar input[type="date"], .filter-bar input[type="month"] {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 12px;
       font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 4px;
+      font-weight: 600;
+      color: var(--text-main);
+      outline: none;
+      font-family: inherit;
+      min-width: 160px;
+    }
+    .filter-bar select:focus, .filter-bar input:focus {
+      border-color: var(--orange-primary);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
     }
 
-    /* KPI GRID */
+    /* KPI CARDS */
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 24px;
+      gap: 16px;
+      margin-bottom: 22px;
     }
+    .kpi-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .kpi-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .kpi-card {
-      background: var(--white);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid var(--orange-primary);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); }
+    .kpi-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); margin-bottom: 10px; }
+    .kpi-value { font-size: 26px; font-weight: 800; color: var(--navy); letter-spacing: -0.6px; margin-bottom: 4px; }
+    .kpi-subtitle { font-size: 11px; color: var(--text-light); }
+
+    /* PANELS & CHARTS */
+    .chart-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 22px;
+    }
+    .chart-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chart-card-title { font-size: 14.5px; font-weight: 700; color: var(--navy); }
+    .chart-card-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .chart-box { min-height: 330px; width: 100%; }
+
+    /* TOGGLE PILLS */
+    .pill-btn-group { display: flex; gap: 8px; }
+    .pill-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .pill-btn:hover { color: var(--orange-dark); border-color: var(--orange-border); }
+    .pill-btn.active {
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      border-color: var(--orange-primary);
+      box-shadow: 0 1px 3px rgba(249, 115, 22, 0.12);
+    }
+
+    /* HERO REPS */
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 22px; }
+    .hero-card {
+      background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 14px;
       padding: 22px;
       box-shadow: var(--card-shadow);
       position: relative;
-      overflow: hidden;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-
-    .kpi-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
-    }
-
-    .kpi-title {
-      font-size: 12px;
-      font-weight: 700;
+    .hero-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--text-muted);
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: 12px;
       margin-bottom: 12px;
     }
+    .hero-badge.rev { background: var(--orange-light); color: var(--orange-dark); }
+    .hero-badge.conv { background: #ecfdf5; color: var(--success); }
+    .hero-name { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .hero-val { font-size: 30px; font-weight: 800; margin-bottom: 16px; }
+    .hero-stats-row { display: flex; gap: 18px; flex-wrap: wrap; }
+    .hero-stat-item { display: flex; flex-direction: column; gap: 2px; }
+    .hero-stat-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); }
+    .hero-stat-val { font-size: 14px; font-weight: 700; color: var(--navy); }
 
-    .kpi-value {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.8px;
-      margin-bottom: 6px;
+    /* TABLES */
+    .table-wrap { overflow-x: auto; max-height: 480px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12.5px; }
+    thead { background: #f8fafc; position: sticky; top: 0; z-index: 2; }
+    th { padding: 12px 16px; font-weight: 700; color: var(--text-muted); border-bottom: 1px solid var(--border-color); }
+    td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: var(--text-main); }
+    tr:hover td { background: var(--orange-light); }
+    .align-r { text-align: right; }
+
+    @media (max-width: 1024px) {
+      .kpi-grid, .kpi-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1fr; }
     }
-
-    .kpi-subtitle {
-      font-size: 11px;
-      color: var(--text-light);
-    }
-
-    /* PANELS & CHARTS */
-    .chart-panel {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: var(--card-shadow);
-      margin-bottom: 24px;
-    }
-
-    .panel-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .chart-box {
-      min-height: 340px;
-      width: 100%;
-    }
-
-    /* DATA TABLES */
-    .table-card {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      margin-bottom: 24px;
-    }
-
-    .table-container {
-      overflow-x: auto;
-      max-height: 480px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 12.5px;
-    }
-
-    thead {
-      background: #f8fafc;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-
-    th {
-      padding: 13px 16px;
-      font-weight: 700;
-      color: #475569;
-      border-bottom: 1px solid var(--border-color);
-      white-space: nowrap;
-    }
-
-    td {
-      padding: 12px 16px;
-      color: var(--text-main);
-      border-bottom: 1px solid #f1f5f9;
-      white-space: nowrap;
-    }
-
-    tr:hover td {
-      background: #fbfdff;
-    }
-
-    .align-right {
-      text-align: right;
-    }
-
-    /* RESPONSIVENESS */
-    @media (max-width: 1080px) {
-      .kpi-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 768px) {
-      .sidebar {
-        width: 68px;
-        padding: 16px 8px;
-      }
-      .nav-label-head, .nav-label {
-        display: none;
-      }
-      .nav-item {
-        justify-content: center;
-        padding: 12px 0;
-      }
-      .content-area {
-        margin-left: 68px;
-        padding: 16px;
-      }
-      .kpi-grid {
-        grid-template-columns: 1fr;
-      }
+      .sidebar { width: 68px; padding: 16px 8px; }
+      .nav-label-head, .nav-label { display: none; }
+      .nav-item { justify-content: center; padding: 12px 0; }
+      .content-area { margin-left: 68px; padding: 16px; }
+      .kpi-grid, .kpi-grid-4, .kpi-grid-2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP NAVIGATION -->
+  <!-- TOPBAR -->
   <header class="topbar">
     <a href="#" class="brand">
       <span class="brand-badge">FLORZY</span>
@@ -414,12 +353,12 @@
     <div class="page-title" id="pageTitleText">Executive Overview</div>
     <div class="top-spacer"></div>
 
-    <div class="last-sync-badge">
+    <div class="sync-badge">
       <div class="sync-dot"></div>
       <span id="syncTimestamp">Snapshot loaded</span>
     </div>
 
-    <div class="scope-toggle">
+    <div class="scope-toggle" id="scopeToggleContainer">
       <button class="scope-btn active" id="btnScopeStore" onclick="switchScope('STORE')">Store</button>
       <button class="scope-btn" id="btnScopeCombined" onclick="switchScope('COMBINED')">Combined</button>
     </div>
@@ -455,138 +394,303 @@
       </div>
     </nav>
 
-    <!-- CONTENT WRAPPER -->
+    <!-- CONTENT -->
     <main class="content-area">
 
-      <!-- 1. TAB: OVERVIEW -->
+      <!-- 1. OVERVIEW -->
       <section id="tab-overview" class="tab-section active">
         <div class="section-head">
           <div>
-            <h1 id="overviewTitle">Sales Overview</h1>
-            <p id="overviewSubtitle">Real-time performance across channels</p>
+            <h1>Sales Overview</h1>
+            <p id="ovPeriodText">All-time & monthly performance overview</p>
           </div>
         </div>
 
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-title" id="lbl-total-rev">Store Revenue</div>
-            <div class="kpi-value" id="val-total-rev">-</div>
-            <div class="kpi-subtitle" id="sub-total-rev">Store orders all-time</div>
+            <div class="kpi-title" id="ov-rev-lbl">Store Revenue</div>
+            <div class="kpi-value" id="ov-rev-val">-</div>
+            <div class="kpi-subtitle" id="ov-rev-note">Store orders all-time</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-title" id="lbl-month-rev">Selected Month Revenue</div>
-            <div class="kpi-value" id="val-month-rev">-</div>
-            <div class="kpi-subtitle">Current monthly tracking</div>
+            <div class="kpi-title" id="ov-mrev-lbl">Selected Month Revenue</div>
+            <div class="kpi-value" id="ov-mrev-val">-</div>
+            <div class="kpi-subtitle">Current month snapshot</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-title">Monthly Bookings</div>
-            <div class="kpi-value" id="val-bookings">-</div>
-            <div class="kpi-subtitle">Completed orders this month</div>
+            <div class="kpi-value" id="ov-book-val">-</div>
+            <div class="kpi-subtitle">Completed orders in selected month</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-title">Unique Customers</div>
-            <div class="kpi-value" id="val-customers">-</div>
-            <div class="kpi-subtitle">Distinct buyers served</div>
+            <div class="kpi-value" id="ov-cust-val">-</div>
+            <div class="kpi-subtitle">Distinct customer phones</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-title">Store Conversion</div>
-            <div class="kpi-value" id="val-store-conv">-</div>
-            <div class="kpi-subtitle">Store bookings / store visitors</div>
+            <div class="kpi-value" id="ov-sconv-val">-</div>
+            <div class="kpi-subtitle">Store bookings / visitors</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-title">Combined Conversion</div>
-            <div class="kpi-value" id="val-comb-conv">-</div>
+            <div class="kpi-value" id="ov-cconv-val">-</div>
             <div class="kpi-subtitle">All bookings / store visitors</div>
           </div>
         </div>
 
-        <div class="chart-panel">
-          <div class="panel-title">Payment Collection Distribution</div>
-          <div id="chart-payment" class="chart-box"></div>
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-card-title">Payment Collection Distribution</div>
+              <div class="chart-card-sub">Received vs Outstanding balances</div>
+            </div>
+          </div>
+          <div id="ov-chart-payment" class="chart-box"></div>
         </div>
       </section>
 
-      <!-- 2. TAB: REVENUE TREND -->
+      <!-- 2. REVENUE TREND -->
       <section id="tab-revenue" class="tab-section">
         <div class="section-head">
           <div>
-            <h1>Revenue Performance & Trend</h1>
-            <p>Historical revenue velocity and month-over-month trajectory</p>
+            <h1>Revenue Performance & Trends</h1>
+            <p>Trajectory, rolling velocity, and historical averages</p>
           </div>
         </div>
-        <div class="chart-panel">
-          <div class="panel-title">Revenue Trajectory</div>
-          <div id="chart-revenue-trend" class="chart-box"></div>
+
+        <div class="kpi-grid-4 kpi-grid">
+          <div class="kpi-card" style="border-left-color: #f97316;">
+            <div class="kpi-title">Peak Revenue</div>
+            <div class="kpi-value" id="rv-peak-val">-</div>
+            <div class="kpi-subtitle" id="rv-peak-date">-</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #ea580c;">
+            <div class="kpi-title">Least Revenue</div>
+            <div class="kpi-value" id="rv-least-val">-</div>
+            <div class="kpi-subtitle" id="rv-least-date">-</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #10b981;">
+            <div class="kpi-title">Today's Revenue</div>
+            <div class="kpi-value" id="rv-today-val">-</div>
+            <div class="kpi-subtitle">Today</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #8b5cf6;">
+            <div class="kpi-title">Current Week</div>
+            <div class="kpi-value" id="rv-week-val">-</div>
+            <div class="kpi-subtitle" id="rv-week-lbl">-</div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-card-title">Rolling 2-Week Revenue Trajectory</div>
+              <div class="chart-card-sub">Zone 1 (Reference) vs Zone 2 (Current)</div>
+            </div>
+          </div>
+          <div id="rv-chart-rolling" class="chart-box"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-card-title">Monthly Revenue All-Time</div>
+              <div class="chart-card-sub">Monthly trend comparison</div>
+            </div>
+            <div class="pill-btn-group">
+              <button class="pill-btn active" id="btn-m-rev" onclick="setMonthlyMode('revenue')">Revenue</button>
+              <button class="pill-btn" id="btn-m-aov" onclick="setMonthlyMode('aov')">+ AOV & Median</button>
+              <button class="pill-btn" id="btn-m-uc" onclick="setMonthlyMode('uc')">+ Unique Customers</button>
+            </div>
+          </div>
+          <div id="rv-chart-monthly" class="chart-box"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-card-title">Weekly Revenue All-Time</div>
+              <div class="chart-card-sub">Week-by-week totals</div>
+            </div>
+            <div class="pill-btn-group">
+              <button class="pill-btn active" id="btn-w-rev" onclick="setWeeklyMode('revenue')">Revenue</button>
+              <button class="pill-btn" id="btn-w-aov" onclick="setWeeklyMode('aov')">+ AOV</button>
+              <button class="pill-btn" id="btn-w-uc" onclick="setWeeklyMode('uc')">+ Unique Customers</button>
+            </div>
+          </div>
+          <div id="rv-chart-weekly" class="chart-box"></div>
         </div>
       </section>
 
-      <!-- 3. TAB: REP PERFORMANCE -->
+      <!-- 3. REP PERFORMANCE -->
       <section id="tab-repperf" class="tab-section">
         <div class="section-head">
           <div>
             <h1>Representative Performance</h1>
-            <p>Direct bookings, revenue distribution, and sales team contributions</p>
+            <p>Conversion metrics, customer acquisition, and peak rep benchmarking</p>
           </div>
         </div>
-        <div class="chart-panel">
-          <div class="panel-title">Team Sales Comparison</div>
-          <div id="chart-rep-bar" class="chart-box"></div>
+
+        <div class="kpi-grid-4 kpi-grid" id="rp-pills-container">
+          <!-- Populated dynamically -->
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-card-title">Weekly Converted Customers vs Peak & Avg</div>
+          </div>
+          <div id="rp-w-book" class="chart-box"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-card-title">Weekly Conversion Rate % (Rep vs Peak vs Team Avg)</div>
+          </div>
+          <div id="rp-w-conv" class="chart-box"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-card-title">Monthly Conversion Rate %</div>
+          </div>
+          <div id="rp-m-conv" class="chart-box"></div>
         </div>
       </section>
 
-      <!-- 4. TAB: CONVERSION -->
+      <!-- 4. CONVERSION -->
       <section id="tab-conversion" class="tab-section">
         <div class="section-head">
           <div>
-            <h1>Conversion Funnel Analysis</h1>
-            <p>Efficiency of lead qualification and channel conversion</p>
+            <h1>Conversion Funnels & Rule Comparison</h1>
+            <p>First-visit cohort conversion vs period activity conversion</p>
           </div>
         </div>
-        <div class="chart-panel">
-          <div class="panel-title">Conversion Rates by Category</div>
-          <div id="chart-conversion" class="chart-box"></div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-card-title">Rule 1: Same-Month Conversion (7-Day Buffer)</div>
+              <div class="chart-card-sub">First-visit cohort tracking</div>
+            </div>
+          </div>
+          <div id="conv-rule1-chart" class="chart-box"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div>
+              <div class="chart-card-title">Rule 2: Monthly Activity-Based Conversion</div>
+              <div class="chart-card-sub">Active visitors converted within the month</div>
+            </div>
+          </div>
+          <div id="conv-rule2-chart" class="chart-box"></div>
         </div>
       </section>
 
-      <!-- 5. TAB: ORDER BUCKETS -->
+      <!-- 5. ORDER BUCKETS -->
       <section id="tab-buckets" class="tab-section">
         <div class="section-head">
           <div>
-            <h1>Order Size Buckets</h1>
-            <p>Ticket size distribution across high, mid, and entry-level bookings</p>
+            <h1>Order Bucket Contribution</h1>
+            <p>Volume and ticket size distribution</p>
           </div>
         </div>
-        <div class="chart-panel">
-          <div class="panel-title">Orders by Size Tiers</div>
-          <div id="chart-buckets" class="chart-box"></div>
+
+        <div class="kpi-grid-4 kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-title">Total Orders</div>
+            <div class="kpi-value" id="bk-tot-orders">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Total Revenue</div>
+            <div class="kpi-value" id="bk-tot-rev">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Top Bucket (Orders)</div>
+            <div class="kpi-value" id="bk-top-count" style="font-size: 20px;">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Top Bucket (Revenue)</div>
+            <div class="kpi-value" id="bk-top-rev" style="font-size: 20px;">-</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="chart-card">
+            <div class="chart-card-title" style="margin-bottom: 12px;">Order Count Share</div>
+            <div id="bk-chart-count" class="chart-box"></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-title" style="margin-bottom: 12px;">Revenue Share</div>
+            <div id="bk-chart-rev" class="chart-box"></div>
+          </div>
         </div>
       </section>
 
-      <!-- 6. TAB: TOP PERFORMERS -->
+      <!-- 6. TOP PERFORMERS -->
       <section id="tab-topperformers" class="tab-section">
         <div class="section-head">
           <div>
             <h1>Top Performers & Leaderboard</h1>
-            <p>Leaderboard rank, transaction volume, and conversion efficiency</p>
+            <p>Rankings across revenue and conversion efficiency</p>
           </div>
         </div>
-        <div class="table-card">
-          <div class="table-container">
-            <table id="table-topperformers">
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Sales Representative</th>
-                  <th class="align-right">Total Revenue</th>
-                  <th class="align-right">Bookings</th>
-                  <th class="align-right">Conversion Rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-light);">Loading leaderboard...</td></tr>
-              </tbody>
-            </table>
+
+        <div class="hero-grid">
+          <div class="hero-card" style="border-top: 4px solid var(--orange-primary);">
+            <div class="hero-badge rev">Top Revenue Performer</div>
+            <div class="hero-name" id="hero-rev-name">-</div>
+            <div class="hero-val" id="hero-rev-val" style="color: var(--orange-dark);">-</div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Bookings</span>
+                <span class="hero-stat-val" id="hero-rev-book">-</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Unique Customers</span>
+                <span class="hero-stat-val" id="hero-rev-cust">-</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Avg / Customer</span>
+                <span class="hero-stat-val" id="hero-rev-avg">-</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Conversion</span>
+                <span class="hero-stat-val" id="hero-rev-conv">-</span>
+              </div>
+            </div>
           </div>
+
+          <div class="hero-card" style="border-top: 4px solid var(--success);">
+            <div class="hero-badge conv">Top Conversion Performer</div>
+            <div class="hero-name" id="hero-conv-name">-</div>
+            <div class="hero-val" id="hero-conv-val" style="color: var(--success);">-</div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Bookings</span>
+                <span class="hero-stat-val" id="hero-conv-book">-</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Revenue</span>
+                <span class="hero-stat-val" id="hero-conv-rev">-</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="hero-stat-lbl">Consulted</span>
+                <span class="hero-stat-val" id="hero-conv-consulted">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-title" style="margin-bottom: 12px;">Revenue Ranking — All Sales Reps</div>
+          <div id="tp-chart-rev-rank" class="chart-box"></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-title" style="margin-bottom: 12px;">Conversion Rate Ranking (%)</div>
+          <div id="tp-chart-conv-rank" class="chart-box"></div>
         </div>
       </section>
 
@@ -596,22 +700,40 @@
   <script>
     let rawData = null;
     let currentScope = 'STORE';
+    let currentTab = 'overview';
+    let rvMonthlyMode = 'revenue';
+    let rvWeeklyMode = 'revenue';
 
-    // Format numbers into Indian Lakhs / Crores
-    function formatCurrency(n) {
+    const ORANGE = '#f97316';
+    const ORANGE_DARK = '#ea580c';
+    const GREEN = '#10b981';
+    const SLATE = '#64748b';
+    const BUCKET_COLORS = ['#f97316', '#10b981', '#3b82f6', '#8b5cf6', '#ef4444', '#06b6d4'];
+
+    function fmtMoney(n) {
       n = Number(n) || 0;
       if (n >= 1e7) return '₹' + (n / 1e7).toFixed(2) + ' Cr';
       if (n >= 1e5) return '₹' + (n / 1e5).toFixed(2) + ' L';
       return '₹' + Math.round(n).toLocaleString('en-IN');
     }
 
-    function formatPct(v) {
+    function fmtPct(v) {
       const n = Number(v);
       return Number.isFinite(n) ? n.toFixed(1) + '%' : '-';
     }
 
-    // Tab Switching
+    function fmtDate(d) {
+      if (!d) return '-';
+      return new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+    }
+
+    function fmtMonth(d) {
+      if (!d) return '-';
+      return new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { month: 'short', year: '2-digit' });
+    }
+
     function switchTab(tabId, elem) {
+      currentTab = tabId;
       document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 
@@ -622,16 +744,15 @@
       const labels = {
         overview: 'Executive Overview',
         revenue: 'Revenue Trend',
-        repperf: 'Rep Performance',
-        conversion: 'Conversion Rates',
+        repperf: 'Representative Performance',
+        conversion: 'Conversion Analysis',
         buckets: 'Order Buckets',
         topperformers: 'Top Performers'
       };
       document.getElementById('pageTitleText').textContent = labels[tabId] || 'Dashboard';
-      renderAll();
+      renderCurrentTab();
     }
 
-    // Scope Switching (Store vs Combined)
     function switchScope(scope) {
       currentScope = scope;
       document.getElementById('btnScopeStore').classList.toggle('active', scope === 'STORE');
@@ -639,7 +760,25 @@
       renderOverview();
     }
 
-    // Render Overview KPI cards and Donut Chart
+    function setMonthlyMode(mode) {
+      rvMonthlyMode = mode;
+      ['rev', 'aov', 'uc'].forEach(m => {
+        const btn = document.getElementById('btn-m-' + m);
+        if (btn) btn.classList.toggle('active', mode === m);
+      });
+      renderRevenueTrend();
+    }
+
+    function setWeeklyMode(mode) {
+      rvWeeklyMode = mode;
+      ['rev', 'aov', 'uc'].forEach(m => {
+        const btn = document.getElementById('btn-w-' + m);
+        if (btn) btn.classList.toggle('active', mode === m);
+      });
+      renderRevenueTrend();
+    }
+
+    // 1. RENDER OVERVIEW
     function renderOverview() {
       if (!rawData) return;
       const data = currentScope === 'COMBINED' ? rawData.overviewCombined : rawData.overviewStore;
@@ -648,27 +787,26 @@
       const k = data.kpis || {};
       const p = data.paymentCollection || {};
 
-      document.getElementById('lbl-total-rev').textContent = currentScope === 'COMBINED' ? 'Combined Revenue' : 'Store Revenue';
-      document.getElementById('sub-total-rev').textContent = currentScope === 'COMBINED' ? 'Store + CDT + Online (All-time)' : 'Store orders only (All-time)';
-      document.getElementById('val-total-rev').textContent = formatCurrency(k.totalRevenue);
-      document.getElementById('val-month-rev').textContent = formatCurrency(k.thisMonthRevenue);
-      document.getElementById('val-bookings').textContent = (Number(k.totalBookings) || 0).toLocaleString('en-IN');
-      document.getElementById('val-customers').textContent = (Number(k.totalUniqueCustomers) || 0).toLocaleString('en-IN');
-      document.getElementById('val-store-conv').textContent = formatPct(k.storeConversion);
-      document.getElementById('val-comb-conv').textContent = formatPct(k.combinedConversion);
+      document.getElementById('ov-rev-lbl').textContent = currentScope === 'COMBINED' ? 'Combined Revenue' : 'Store Revenue';
+      document.getElementById('ov-rev-note').textContent = currentScope === 'COMBINED' ? 'Store + CDT + Online' : 'Store orders only';
+      document.getElementById('ov-rev-val').textContent = fmtMoney(k.totalRevenue);
+      document.getElementById('ov-mrev-val').textContent = fmtMoney(k.thisMonthRevenue);
+      document.getElementById('ov-book-val').textContent = (Number(k.totalBookings) || 0).toLocaleString('en-IN');
+      document.getElementById('ov-cust-val').textContent = (Number(k.totalUniqueCustomers) || 0).toLocaleString('en-IN');
+      document.getElementById('ov-sconv-val').textContent = fmtPct(k.storeConversion);
+      document.getElementById('ov-cconv-val').textContent = fmtPct(k.combinedConversion);
 
-      // Render Payment Donut Chart with Plotly
       if (window.Plotly) {
-        Plotly.newPlot('chart-payment', [{
+        Plotly.newPlot('ov-chart-payment', [{
           type: 'pie',
-          hole: 0.65,
-          labels: ['Received Amount', 'Outstanding Amount'],
+          hole: 0.62,
+          labels: ['Received', 'Outstanding'],
           values: [Number(p.received) || 0, Number(p.outstanding) || 0],
-          marker: { colors: ['#2563eb', '#bfdbfe'] },
+          marker: { colors: [ORANGE, '#fed7aa'] },
           textinfo: 'label+percent',
           hoverinfo: 'label+value+percent'
         }], {
-          height: 340,
+          height: 330,
           margin: { t: 20, b: 20, l: 20, r: 20 },
           legend: { orientation: 'h', y: -0.1 },
           font: { family: 'Plus Jakarta Sans, sans-serif' }
@@ -676,67 +814,239 @@
       }
     }
 
-    // Render Revenue, Rep Performance, Buckets and Leaderboard
-    function renderAll() {
-      if (!rawData) return;
-      renderOverview();
+    // 2. RENDER REVENUE TREND
+    function renderRevenueTrend() {
+      if (!rawData || !rawData.revenueTotal) return;
+      const d = rawData.revenueTotal;
+      const dates = d.dates || [];
+      const values = d.values || [];
 
-      // Top Performers Table
-      const topList = rawData.topPerformers || rawData.repPerf || [];
-      const tbody = document.querySelector('#table-topperformers tbody');
-      if (Array.isArray(topList) && topList.length > 0 && tbody) {
-        tbody.innerHTML = topList.map((rep, idx) => `
-          <tr>
-            <td style="font-weight:700;">#${idx + 1}</td>
-            <td style="font-weight:600; color:#1e293b;">${rep.name || rep.repName || 'Representative'}</td>
-            <td class="align-right" style="font-weight:700;">${formatCurrency(rep.revenue || rep.totalRevenue)}</td>
-            <td class="align-right">${(rep.bookings || rep.orders || 0).toLocaleString('en-IN')}</td>
-            <td class="align-right" style="color:#2563eb; font-weight:700;">${formatPct(rep.conversion || rep.conversionRate)}</td>
-          </tr>
-        `).join('');
-      }
+      document.getElementById('rv-peak-val').textContent = fmtMoney(d.peak);
+      document.getElementById('rv-peak-date').textContent = fmtDate(d.peakDate);
+      document.getElementById('rv-least-val').textContent = fmtMoney(d.least);
+      document.getElementById('rv-least-date').textContent = fmtDate(d.leastDate);
+      document.getElementById('rv-today-val').textContent = fmtMoney(d.todayRevenue);
 
-      // Bar Chart for Reps
-      if (window.Plotly && rawData.barDataTotal) {
-        const bd = rawData.barDataTotal;
-        Plotly.newPlot('chart-rep-bar', [{
-          x: bd.labels || [],
-          y: bd.values || [],
-          type: 'bar',
-          marker: { color: '#3b82f6', borderRadius: 4 }
+      // Calculate this week sum
+      const thisMon = d.thisMonday;
+      let weekSum = 0;
+      dates.forEach((dt, i) => {
+        if (dt >= thisMon) weekSum += values[i];
+      });
+      document.getElementById('rv-week-val').textContent = fmtMoney(weekSum);
+      document.getElementById('rv-week-lbl').textContent = 'Since ' + fmtDate(thisMon);
+
+      if (window.Plotly && dates.length) {
+        // Rolling Chart
+        Plotly.newPlot('rv-chart-rolling', [{
+          x: dates.map(fmtDate),
+          y: values,
+          type: 'scatter',
+          mode: 'lines+markers',
+          line: { color: ORANGE, width: 3, shape: 'spline' },
+          marker: { color: ORANGE_DARK, size: 6 }
         }], {
-          height: 340,
-          margin: { t: 20, b: 40, l: 40, r: 20 },
+          height: 330,
+          margin: { t: 20, b: 40, l: 60, r: 20 },
           font: { family: 'Plus Jakarta Sans, sans-serif' }
         }, { responsive: true, displayModeBar: false });
+
+        // Monthly Bar Chart
+        if (d.monthly && d.monthly.dates) {
+          Plotly.newPlot('rv-chart-monthly', [{
+            x: d.monthly.dates.map(fmtMonth),
+            y: d.monthly.values,
+            type: 'bar',
+            marker: { color: ORANGE, opacity: 0.9 }
+          }], {
+            height: 330,
+            margin: { t: 20, b: 40, l: 60, r: 20 },
+            font: { family: 'Plus Jakarta Sans, sans-serif' }
+          }, { responsive: true, displayModeBar: false });
+        }
+
+        // Weekly Bar Chart
+        if (d.weekly && d.weekly.dates) {
+          Plotly.newPlot('rv-chart-weekly', [{
+            x: d.weekly.dates.map(fmtDate),
+            y: d.weekly.values,
+            type: 'bar',
+            marker: { color: ORANGE_DARK, opacity: 0.9 }
+          }], {
+            height: 330,
+            margin: { t: 20, b: 40, l: 60, r: 20 },
+            font: { family: 'Plus Jakarta Sans, sans-serif' }
+          }, { responsive: true, displayModeBar: false });
+        }
       }
     }
 
-    // Fetch snapshot JSON
+    // 3. RENDER REP PERFORMANCE
+    function renderRepPerformance() {
+      if (!rawData || !rawData.conversion) return;
+      const w = rawData.conversion.weekly || {};
+      const m = rawData.conversion.monthly || {};
+
+      // Render Pills
+      const pillsBox = document.getElementById('rp-pills-container');
+      if (w.repBookings && w.repBookings.length) {
+        const wi = w.repBookings.length - 1;
+        pillsBox.innerHTML = `
+          <div class="kpi-card"><div class="kpi-title">Weekly Converted</div><div class="kpi-value">${w.repBookings[wi]}</div></div>
+          <div class="kpi-card"><div class="kpi-title">Weekly Visitors</div><div class="kpi-value">${w.repConsultations[wi]}</div></div>
+          <div class="kpi-card"><div class="kpi-title">Weekly Conversion</div><div class="kpi-value">${w.repConversionPct[wi]}%</div></div>
+          <div class="kpi-card"><div class="kpi-title">Monthly Conversion</div><div class="kpi-value">${(m.repConversionPct ? m.repConversionPct[m.repConversionPct.length - 1] : 0)}%</div></div>
+        `;
+      }
+
+      if (window.Plotly && w.periods) {
+        const wLabels = w.periods.map(fmtDate);
+        Plotly.newPlot('rp-w-book', [{
+          x: wLabels, y: w.repBookings || [], type: 'scatter', mode: 'lines+markers', name: 'Rep Bookings', line: { color: ORANGE, width: 3 }
+        }, {
+          x: wLabels, y: w.peakBookings || [], type: 'scatter', mode: 'lines', name: 'Peak Rep', line: { color: GREEN, dash: 'dot' }
+        }], { height: 320, margin: { t: 20, b: 40, l: 50, r: 20 } }, { responsive: true, displayModeBar: false });
+
+        Plotly.newPlot('rp-w-conv', [{
+          x: wLabels, y: w.repConversionPct || [], type: 'scatter', mode: 'lines+markers', name: 'Conversion %', line: { color: ORANGE, width: 3 }
+        }], { height: 320, margin: { t: 20, b: 40, l: 50, r: 20 } }, { responsive: true, displayModeBar: false });
+      }
+    }
+
+    // 4. RENDER CONVERSION RULES
+    function renderConversion() {
+      if (!rawData || !rawData.repPerf) return;
+      const m = rawData.repPerf.monthly || {};
+      const labels = (m.dates || []).map(fmtMonth);
+
+      if (window.Plotly && labels.length) {
+        Plotly.newPlot('conv-rule1-chart', [{
+          x: labels,
+          y: m.sameMonthConversion || [],
+          type: 'bar',
+          marker: { color: GREEN }
+        }], { height: 320, margin: { t: 20, b: 40, l: 50, r: 20 } }, { responsive: true, displayModeBar: false });
+
+        Plotly.newPlot('conv-rule2-chart', [{
+          x: labels,
+          y: m.bookingMonthConversion || [],
+          type: 'bar',
+          marker: { color: ORANGE }
+        }], { height: 320, margin: { t: 20, b: 40, l: 50, r: 20 } }, { responsive: true, displayModeBar: false });
+      }
+    }
+
+    // 5. RENDER ORDER BUCKETS
+    function renderBuckets() {
+      if (!rawData || !rawData.buckets) return;
+      const b = rawData.buckets;
+      const counts = b.counts || [];
+      const revs = b.revenues || [];
+      const labels = b.labels || [];
+
+      const tc = counts.reduce((x, y) => x + y, 0);
+      const tr = revs.reduce((x, y) => x + y, 0);
+
+      document.getElementById('bk-tot-orders').textContent = tc.toLocaleString('en-IN');
+      document.getElementById('bk-tot-rev').textContent = fmtMoney(tr);
+
+      const ci = counts.indexOf(Math.max(...counts));
+      const ri = revs.indexOf(Math.max(...revs));
+      document.getElementById('bk-top-count').textContent = ci >= 0 ? labels[ci] : '-';
+      document.getElementById('bk-top-rev').textContent = ri >= 0 ? labels[ri] : '-';
+
+      if (window.Plotly) {
+        Plotly.newPlot('bk-chart-count', [{
+          type: 'pie',
+          hole: 0.5,
+          labels: labels,
+          values: counts,
+          marker: { colors: BUCKET_COLORS }
+        }], { height: 320, margin: { t: 20, b: 20, l: 20, r: 20 } }, { responsive: true, displayModeBar: false });
+
+        Plotly.newPlot('bk-chart-rev', [{
+          type: 'pie',
+          hole: 0.5,
+          labels: labels,
+          values: revs,
+          marker: { colors: BUCKET_COLORS }
+        }], { height: 320, margin: { t: 20, b: 20, l: 20, r: 20 } }, { responsive: true, displayModeBar: false });
+      }
+    }
+
+    // 6. RENDER TOP PERFORMERS
+    function renderTopPerformers() {
+      if (!rawData || !rawData.topPerformers) return;
+      const tp = rawData.topPerformers;
+      const r = tp.topRevRep;
+      const c = tp.topConvRep;
+
+      if (r) {
+        document.getElementById('hero-rev-name').textContent = r.name || '-';
+        document.getElementById('hero-rev-val').textContent = fmtMoney(r.revenue);
+        document.getElementById('hero-rev-book').textContent = (r.bookings || 0).toLocaleString('en-IN');
+        document.getElementById('hero-rev-cust').textContent = (r.uniqueCustomers || 0).toLocaleString('en-IN');
+        document.getElementById('hero-rev-avg').textContent = fmtMoney(r.uniqueCustomers ? Math.round(r.revenue / r.uniqueCustomers) : 0);
+        document.getElementById('hero-rev-conv').textContent = (r.convPct || 0) + '%';
+      }
+
+      if (c) {
+        document.getElementById('hero-conv-name').textContent = c.name || '-';
+        document.getElementById('hero-conv-val').textContent = (c.convPct || 0) + '%';
+        document.getElementById('hero-conv-book').textContent = (c.totalBooked || c.bookings || 0).toLocaleString('en-IN');
+        document.getElementById('hero-conv-rev').textContent = fmtMoney(c.revenue);
+        document.getElementById('hero-conv-consulted').textContent = (c.totalConsulted || 0).toLocaleString('en-IN');
+      }
+
+      // Ranking Charts
+      const reps = tp.repList || [];
+      if (window.Plotly && reps.length) {
+        Plotly.newPlot('tp-chart-rev-rank', [{
+          x: reps.map(x => x.name),
+          y: reps.map(x => x.revenue),
+          type: 'bar',
+          marker: { color: ORANGE }
+        }], { height: 300, margin: { t: 20, b: 60, l: 60, r: 20 } }, { responsive: true, displayModeBar: false });
+
+        Plotly.newPlot('tp-chart-conv-rank', [{
+          x: reps.map(x => x.name),
+          y: reps.map(x => x.convPct),
+          type: 'bar',
+          marker: { color: GREEN }
+        }], { height: 300, margin: { t: 20, b: 60, l: 60, r: 20 } }, { responsive: true, displayModeBar: false });
+      }
+    }
+
+    function renderCurrentTab() {
+      switch (currentTab) {
+        case 'overview': renderOverview(); break;
+        case 'revenue': renderRevenueTrend(); break;
+        case 'repperf': renderRepPerformance(); break;
+        case 'conversion': renderConversion(); break;
+        case 'buckets': renderBuckets(); break;
+        case 'topperformers': renderTopPerformers(); break;
+      }
+    }
+
+    // Auto-fetch Snapshot
     async function loadSnapshot() {
       try {
-        // Tries data.json first, falls back to public/data.json
         let res = await fetch('data.json?v=' + Date.now());
-        if (!res.ok) {
-          res = await fetch('public/data.json?v=' + Date.now());
-        }
-        if (!res.ok) throw new Error('Could not load data snapshot');
+        if (!res.ok) res = await fetch('public/data.json?v=' + Date.now());
+        if (!res.ok) throw new Error('Data snapshot not found');
 
         rawData = await res.json();
-
         if (rawData.updatedAt) {
           const dt = new Date(rawData.updatedAt);
           document.getElementById('syncTimestamp').textContent = 'Synced ' + dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         }
-
-        renderAll();
-      } catch (err) {
-        console.error('Failed to load dashboard data:', err);
-        document.getElementById('syncTimestamp').textContent = 'Sync error';
+        renderCurrentTab();
+      } catch (e) {
+        console.error('Snapshot load error:', e);
+        document.getElementById('syncTimestamp').textContent = 'Data snapshot loading error';
       }
     }
 
-    // Auto-boot on load
     window.addEventListener('DOMContentLoaded', loadSnapshot);
   </script>
 </body>
