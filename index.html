@@ -1,144 +1,743 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Florzy Sales Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florzy Insights | Executive Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-
   <style>
     :root {
-      --navy: #14233b;
-      --blue: #2563eb;
-      --ink: #182230;
-      --muted: #64748b;
-      --line: #e5eaf1;
-      --bg: #f4f7fb;
+      --navy: #0f172a;
+      --navy-sidebar: #0b1329;
+      --navy-card: #1e293b;
+      --blue-accent: #3b82f6;
+      --blue-hover: #2563eb;
+      --blue-subtle: #eff6ff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --bg-main: #f8fafc;
+      --border-color: #e2e8f0;
       --white: #ffffff;
+      --success: #10b981;
+      --card-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
     }
-    * { box-sizing: border-box; }
-    html, body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      min-height: 100%;
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
+      padding: 0;
     }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOPBAR */
     .topbar {
-      height: 66px;
+      height: 68px;
       position: fixed;
-      z-index: 100;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       background: var(--white);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
-      padding: 0 22px;
+      padding: 0 24px;
       gap: 16px;
-      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+      z-index: 100;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
     }
-    .brand { font-size: 18px; font-weight: 800; color: var(--navy); }
-    .brand span { color: var(--blue); }
-    .top-divider { height: 28px; width: 1px; background: var(--line); }
-    .page-title { font-size: 14px; font-weight: 650; color: #475569; }
-    .top-spacer { flex: 1; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand span {
+      color: var(--blue-accent);
+    }
+
+    .top-divider {
+      height: 24px;
+      width: 1px;
+      background: var(--border-color);
+    }
+
+    .page-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .top-spacer {
+      flex: 1;
+    }
+
+    .last-sync-badge {
+      font-size: 11px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 8px;
+    }
+
+    .sync-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
     .scope-toggle {
-      display: flex; gap: 3px; padding: 4px;
-      border: 1px solid var(--line); border-radius: 11px; background: #f1f5f9;
+      display: flex;
+      background: #f1f5f9;
+      padding: 3px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
     }
+
     .scope-btn {
-      border: none; background: transparent; color: #64748b;
-      padding: 8px 13px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
+      border: none;
+      background: transparent;
+      padding: 6px 14px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
-    .scope-btn.active { background: var(--white); color: var(--blue); box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12); }
-    .layout { display: flex; padding-top: 66px; min-height: 100vh; }
+
+    .scope-btn.active {
+      background: var(--white);
+      color: var(--blue-hover);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    /* MAIN LAYOUT */
+    .layout {
+      display: flex;
+      margin-top: 68px;
+      min-height: calc(100vh - 68px);
+    }
+
+    /* SIDEBAR */
     .sidebar {
-      width: 224px; position: fixed; top: 66px; bottom: 0; left: 0;
-      background: var(--navy); padding: 22px 12px; z-index: 80;
+      width: 240px;
+      position: fixed;
+      top: 68px;
+      bottom: 0;
+      left: 0;
+      background: var(--navy-sidebar);
+      padding: 24px 14px;
+      overflow-y: auto;
+      z-index: 90;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
     }
+
+    .nav-label-head {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 0 14px 14px;
+    }
+
     .nav-item {
-      display: flex; align-items: center; gap: 12px; padding: 12px;
-      border-radius: 11px; color: #c6d1e1; cursor: pointer; margin: 3px 0; font-size: 13px; font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-radius: 9px;
+      color: #94a3b8;
+      cursor: pointer;
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.18s ease;
     }
-    .nav-item.active { background: #244b85; color: var(--white); }
-    .content { margin-left: 224px; padding: 30px; width: calc(100% - 224px); }
-    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 24px; }
-    .card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    .card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-    .card-value { font-size: 26px; font-weight: 800; color: var(--ink); }
-    .page-loader { min-height: 60vh; display: flex; align-items: center; justify-content: center; gap: 12px; color: #64748b; }
-    .spinner { width: 22px; height: 22px; border: 2px solid #dbe3ef; border-top-color: var(--blue); border-radius: 50%; animation: spin 0.7s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+    }
+
+    .nav-item.active {
+      background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .nav-icon {
+      font-size: 16px;
+      width: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* CONTENT WRAPPER */
+    .content-area {
+      margin-left: 240px;
+      flex: 1;
+      padding: 32px;
+      max-width: 1540px;
+    }
+
+    .tab-section {
+      display: none;
+    }
+
+    .tab-section.active {
+      display: block;
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTION HEADER */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-head h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+
+    .section-head p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* KPI GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+    }
+
+    .kpi-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.8px;
+      margin-bottom: 6px;
+    }
+
+    .kpi-subtitle {
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
+    /* PANELS & CHARTS */
+    .chart-panel {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 24px;
+    }
+
+    .panel-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chart-box {
+      min-height: 340px;
+      width: 100%;
+    }
+
+    /* DATA TABLES */
+    .table-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 24px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      max-height: 480px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 12.5px;
+    }
+
+    thead {
+      background: #f8fafc;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    th {
+      padding: 13px 16px;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      color: var(--text-main);
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+    }
+
+    tr:hover td {
+      background: #fbfdff;
+    }
+
+    .align-right {
+      text-align: right;
+    }
+
+    /* RESPONSIVENESS */
+    @media (max-width: 1080px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 68px;
+        padding: 16px 8px;
+      }
+      .nav-label-head, .nav-label {
+        display: none;
+      }
+      .nav-item {
+        justify-content: center;
+        padding: 12px 0;
+      }
+      .content-area {
+        margin-left: 68px;
+        padding: 16px;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- TOP NAVIGATION -->
   <header class="topbar">
-    <div class="brand">Florzy <span>Insights</span></div>
+    <a href="#" class="brand">
+      <span class="brand-badge">FLORZY</span>
+      Insights
+    </a>
     <div class="top-divider"></div>
-    <div class="page-title" id="topbarTitle">Overview</div>
+    <div class="page-title" id="pageTitleText">Executive Overview</div>
     <div class="top-spacer"></div>
+
+    <div class="last-sync-badge">
+      <div class="sync-dot"></div>
+      <span id="syncTimestamp">Snapshot loaded</span>
+    </div>
+
     <div class="scope-toggle">
-      <button class="scope-btn active" id="storeBtn" onclick="setScope('STORE')">Store</button>
-      <button class="scope-btn" id="combBtn" onclick="setScope('COMBINED')">Combined</button>
+      <button class="scope-btn active" id="btnScopeStore" onclick="switchScope('STORE')">Store</button>
+      <button class="scope-btn" id="btnScopeCombined" onclick="switchScope('COMBINED')">Combined</button>
     </div>
   </header>
 
   <div class="layout">
+    <!-- SIDEBAR -->
     <nav class="sidebar">
-      <div class="nav-item active" onclick="showTab('overview')">▦ Overview</div>
-      <div class="nav-item" onclick="showTab('revenue')">↗ Revenue Trend</div>
-      <div class="nav-item" onclick="showTab('repperf')">◫ Rep Performance</div>
-      <div class="nav-item" onclick="showTab('conversion')">◎ Conversion</div>
+      <div class="nav-label-head">Dashboards</div>
+      <div class="nav-item active" onclick="switchTab('overview', this)">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Overview</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('revenue', this)">
+        <span class="nav-icon">📈</span>
+        <span class="nav-label">Revenue Trend</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('repperf', this)">
+        <span class="nav-icon">👥</span>
+        <span class="nav-label">Rep Performance</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('conversion', this)">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-label">Conversion</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('buckets', this)">
+        <span class="nav-icon">📦</span>
+        <span class="nav-label">Order Buckets</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('topperformers', this)">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">Top Performers</span>
+      </div>
     </nav>
 
-    <main class="content">
-      <div id="loader" class="page-loader"><div class="spinner"></div> Loading snapshot…</div>
-      <div id="dashboardView" style="display:none;">
-        <div class="kpi-grid">
-          <div class="card"><div class="card-title">Total Revenue</div><div class="card-value" id="kpiTotalRev">₹0</div></div>
-          <div class="card"><div class="card-title">This Month Revenue</div><div class="card-value" id="kpiMonthRev">₹0</div></div>
-          <div class="card"><div class="card-title">Total Bookings</div><div class="card-value" id="kpiBookings">0</div></div>
-          <div class="card"><div class="card-title">Conversion Rate</div><div class="card-value" id="kpiConversion">0%</div></div>
+    <!-- CONTENT WRAPPER -->
+    <main class="content-area">
+
+      <!-- 1. TAB: OVERVIEW -->
+      <section id="tab-overview" class="tab-section active">
+        <div class="section-head">
+          <div>
+            <h1 id="overviewTitle">Sales Overview</h1>
+            <p id="overviewSubtitle">Real-time performance across channels</p>
+          </div>
         </div>
-      </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-title" id="lbl-total-rev">Store Revenue</div>
+            <div class="kpi-value" id="val-total-rev">-</div>
+            <div class="kpi-subtitle" id="sub-total-rev">Store orders all-time</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title" id="lbl-month-rev">Selected Month Revenue</div>
+            <div class="kpi-value" id="val-month-rev">-</div>
+            <div class="kpi-subtitle">Current monthly tracking</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Monthly Bookings</div>
+            <div class="kpi-value" id="val-bookings">-</div>
+            <div class="kpi-subtitle">Completed orders this month</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Unique Customers</div>
+            <div class="kpi-value" id="val-customers">-</div>
+            <div class="kpi-subtitle">Distinct buyers served</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Store Conversion</div>
+            <div class="kpi-value" id="val-store-conv">-</div>
+            <div class="kpi-subtitle">Store bookings / store visitors</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-title">Combined Conversion</div>
+            <div class="kpi-value" id="val-comb-conv">-</div>
+            <div class="kpi-subtitle">All bookings / store visitors</div>
+          </div>
+        </div>
+
+        <div class="chart-panel">
+          <div class="panel-title">Payment Collection Distribution</div>
+          <div id="chart-payment" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- 2. TAB: REVENUE TREND -->
+      <section id="tab-revenue" class="tab-section">
+        <div class="section-head">
+          <div>
+            <h1>Revenue Performance & Trend</h1>
+            <p>Historical revenue velocity and month-over-month trajectory</p>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-title">Revenue Trajectory</div>
+          <div id="chart-revenue-trend" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- 3. TAB: REP PERFORMANCE -->
+      <section id="tab-repperf" class="tab-section">
+        <div class="section-head">
+          <div>
+            <h1>Representative Performance</h1>
+            <p>Direct bookings, revenue distribution, and sales team contributions</p>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-title">Team Sales Comparison</div>
+          <div id="chart-rep-bar" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- 4. TAB: CONVERSION -->
+      <section id="tab-conversion" class="tab-section">
+        <div class="section-head">
+          <div>
+            <h1>Conversion Funnel Analysis</h1>
+            <p>Efficiency of lead qualification and channel conversion</p>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-title">Conversion Rates by Category</div>
+          <div id="chart-conversion" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- 5. TAB: ORDER BUCKETS -->
+      <section id="tab-buckets" class="tab-section">
+        <div class="section-head">
+          <div>
+            <h1>Order Size Buckets</h1>
+            <p>Ticket size distribution across high, mid, and entry-level bookings</p>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-title">Orders by Size Tiers</div>
+          <div id="chart-buckets" class="chart-box"></div>
+        </div>
+      </section>
+
+      <!-- 6. TAB: TOP PERFORMERS -->
+      <section id="tab-topperformers" class="tab-section">
+        <div class="section-head">
+          <div>
+            <h1>Top Performers & Leaderboard</h1>
+            <p>Leaderboard rank, transaction volume, and conversion efficiency</p>
+          </div>
+        </div>
+        <div class="table-card">
+          <div class="table-container">
+            <table id="table-topperformers">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Sales Representative</th>
+                  <th class="align-right">Total Revenue</th>
+                  <th class="align-right">Bookings</th>
+                  <th class="align-right">Conversion Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-light);">Loading leaderboard...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 
   <script>
-    var RAW_DATA = null;
-    var CURRENT_SCOPE = 'STORE';
+    let rawData = null;
+    let currentScope = 'STORE';
 
-    window.addEventListener('load', function() {
-      // Direct CDN edge fetch from data.json
-      fetch('/data.json?v=' + Date.now())
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
-          RAW_DATA = data;
-          document.getElementById('loader').style.display = 'none';
-          document.getElementById('dashboardView').style.display = 'block';
-          renderKPIs();
-        })
-        .catch(function(err) {
-          document.getElementById('loader').innerHTML = '<div style="color:red">Snapshot data not loaded yet. Run sync script first.</div>';
-        });
-    });
-
-    function setScope(scope) {
-      CURRENT_SCOPE = scope;
-      document.getElementById('storeBtn').classList.toggle('active', scope === 'STORE');
-      document.getElementById('combBtn').classList.toggle('active', scope === 'COMBINED');
-      renderKPIs();
+    // Format numbers into Indian Lakhs / Crores
+    function formatCurrency(n) {
+      n = Number(n) || 0;
+      if (n >= 1e7) return '₹' + (n / 1e7).toFixed(2) + ' Cr';
+      if (n >= 1e5) return '₹' + (n / 1e5).toFixed(2) + ' L';
+      return '₹' + Math.round(n).toLocaleString('en-IN');
     }
 
-    function renderKPIs() {
-      if (!RAW_DATA) return;
-      var overview = CURRENT_SCOPE === 'STORE' ? RAW_DATA.overviewStore : RAW_DATA.overviewCombined;
-      if (!overview || !overview.kpis) return;
-      document.getElementById('kpiTotalRev').textContent = '₹' + (overview.kpis.totalRevenue || 0).toLocaleString('en-IN');
-      document.getElementById('kpiMonthRev').textContent = '₹' + (overview.kpis.thisMonthRevenue || 0).toLocaleString('en-IN');
-      document.getElementById('kpiBookings').textContent = overview.kpis.totalBookings || 0;
-      document.getElementById('kpiConversion').textContent = (CURRENT_SCOPE === 'STORE' ? overview.kpis.storeConversion : overview.kpis.combinedConversion) + '%';
+    function formatPct(v) {
+      const n = Number(v);
+      return Number.isFinite(n) ? n.toFixed(1) + '%' : '-';
     }
+
+    // Tab Switching
+    function switchTab(tabId, elem) {
+      document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+      const target = document.getElementById('tab-' + tabId);
+      if (target) target.classList.add('active');
+      if (elem) elem.classList.add('active');
+
+      const labels = {
+        overview: 'Executive Overview',
+        revenue: 'Revenue Trend',
+        repperf: 'Rep Performance',
+        conversion: 'Conversion Rates',
+        buckets: 'Order Buckets',
+        topperformers: 'Top Performers'
+      };
+      document.getElementById('pageTitleText').textContent = labels[tabId] || 'Dashboard';
+      renderAll();
+    }
+
+    // Scope Switching (Store vs Combined)
+    function switchScope(scope) {
+      currentScope = scope;
+      document.getElementById('btnScopeStore').classList.toggle('active', scope === 'STORE');
+      document.getElementById('btnScopeCombined').classList.toggle('active', scope === 'COMBINED');
+      renderOverview();
+    }
+
+    // Render Overview KPI cards and Donut Chart
+    function renderOverview() {
+      if (!rawData) return;
+      const data = currentScope === 'COMBINED' ? rawData.overviewCombined : rawData.overviewStore;
+      if (!data) return;
+
+      const k = data.kpis || {};
+      const p = data.paymentCollection || {};
+
+      document.getElementById('lbl-total-rev').textContent = currentScope === 'COMBINED' ? 'Combined Revenue' : 'Store Revenue';
+      document.getElementById('sub-total-rev').textContent = currentScope === 'COMBINED' ? 'Store + CDT + Online (All-time)' : 'Store orders only (All-time)';
+      document.getElementById('val-total-rev').textContent = formatCurrency(k.totalRevenue);
+      document.getElementById('val-month-rev').textContent = formatCurrency(k.thisMonthRevenue);
+      document.getElementById('val-bookings').textContent = (Number(k.totalBookings) || 0).toLocaleString('en-IN');
+      document.getElementById('val-customers').textContent = (Number(k.totalUniqueCustomers) || 0).toLocaleString('en-IN');
+      document.getElementById('val-store-conv').textContent = formatPct(k.storeConversion);
+      document.getElementById('val-comb-conv').textContent = formatPct(k.combinedConversion);
+
+      // Render Payment Donut Chart with Plotly
+      if (window.Plotly) {
+        Plotly.newPlot('chart-payment', [{
+          type: 'pie',
+          hole: 0.65,
+          labels: ['Received Amount', 'Outstanding Amount'],
+          values: [Number(p.received) || 0, Number(p.outstanding) || 0],
+          marker: { colors: ['#2563eb', '#bfdbfe'] },
+          textinfo: 'label+percent',
+          hoverinfo: 'label+value+percent'
+        }], {
+          height: 340,
+          margin: { t: 20, b: 20, l: 20, r: 20 },
+          legend: { orientation: 'h', y: -0.1 },
+          font: { family: 'Plus Jakarta Sans, sans-serif' }
+        }, { responsive: true, displayModeBar: false });
+      }
+    }
+
+    // Render Revenue, Rep Performance, Buckets and Leaderboard
+    function renderAll() {
+      if (!rawData) return;
+      renderOverview();
+
+      // Top Performers Table
+      const topList = rawData.topPerformers || rawData.repPerf || [];
+      const tbody = document.querySelector('#table-topperformers tbody');
+      if (Array.isArray(topList) && topList.length > 0 && tbody) {
+        tbody.innerHTML = topList.map((rep, idx) => `
+          <tr>
+            <td style="font-weight:700;">#${idx + 1}</td>
+            <td style="font-weight:600; color:#1e293b;">${rep.name || rep.repName || 'Representative'}</td>
+            <td class="align-right" style="font-weight:700;">${formatCurrency(rep.revenue || rep.totalRevenue)}</td>
+            <td class="align-right">${(rep.bookings || rep.orders || 0).toLocaleString('en-IN')}</td>
+            <td class="align-right" style="color:#2563eb; font-weight:700;">${formatPct(rep.conversion || rep.conversionRate)}</td>
+          </tr>
+        `).join('');
+      }
+
+      // Bar Chart for Reps
+      if (window.Plotly && rawData.barDataTotal) {
+        const bd = rawData.barDataTotal;
+        Plotly.newPlot('chart-rep-bar', [{
+          x: bd.labels || [],
+          y: bd.values || [],
+          type: 'bar',
+          marker: { color: '#3b82f6', borderRadius: 4 }
+        }], {
+          height: 340,
+          margin: { t: 20, b: 40, l: 40, r: 20 },
+          font: { family: 'Plus Jakarta Sans, sans-serif' }
+        }, { responsive: true, displayModeBar: false });
+      }
+    }
+
+    // Fetch snapshot JSON
+    async function loadSnapshot() {
+      try {
+        // Tries data.json first, falls back to public/data.json
+        let res = await fetch('data.json?v=' + Date.now());
+        if (!res.ok) {
+          res = await fetch('public/data.json?v=' + Date.now());
+        }
+        if (!res.ok) throw new Error('Could not load data snapshot');
+
+        rawData = await res.json();
+
+        if (rawData.updatedAt) {
+          const dt = new Date(rawData.updatedAt);
+          document.getElementById('syncTimestamp').textContent = 'Synced ' + dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        renderAll();
+      } catch (err) {
+        console.error('Failed to load dashboard data:', err);
+        document.getElementById('syncTimestamp').textContent = 'Sync error';
+      }
+    }
+
+    // Auto-boot on load
+    window.addEventListener('DOMContentLoaded', loadSnapshot);
   </script>
 </body>
 </html>
