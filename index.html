@@ -192,36 +192,39 @@
     .section-head h1 { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -0.4px; }
     .section-head p { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
 
-    /* CONTROLS BAR */
-    .filter-bar {
+    .ov-month-box {
       display: flex;
-      align-items: flex-end;
-      gap: 14px;
-      padding: 14px 18px;
+      align-items: center;
+      gap: 10px;
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      margin-bottom: 22px;
-      flex-wrap: wrap;
+      border-radius: 10px;
+      padding: 6px 14px;
       box-shadow: var(--card-shadow);
     }
-    .filter-group { display: flex; flex-direction: column; gap: 4px; }
-    .filter-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-muted); }
-    .filter-bar select, .filter-bar input[type="date"], .filter-bar input[type="month"] {
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 8px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-main);
-      outline: none;
-      font-family: inherit;
-      min-width: 160px;
+    .ov-month-box label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    .filter-bar select:focus, .filter-bar input:focus {
-      border-color: var(--orange-primary);
-      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+    .ov-month-box input[type="month"] {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+    }
+    #ov-sync-status {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-left: 1px solid var(--border-color);
+      padding-left: 10px;
     }
 
     /* KPI CARDS */
@@ -232,7 +235,6 @@
       margin-bottom: 22px;
     }
     .kpi-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .kpi-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .kpi-card {
       background: var(--card-bg);
@@ -321,15 +323,6 @@
     .hero-stat-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--text-light); }
     .hero-stat-val { font-size: 14px; font-weight: 700; color: var(--navy); }
 
-    /* TABLES */
-    .table-wrap { overflow-x: auto; max-height: 480px; }
-    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12.5px; }
-    thead { background: #f8fafc; position: sticky; top: 0; z-index: 2; }
-    th { padding: 12px 16px; font-weight: 700; color: var(--text-muted); border-bottom: 1px solid var(--border-color); }
-    td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; color: var(--text-main); }
-    tr:hover td { background: var(--orange-light); }
-    .align-r { text-align: right; }
-
     @media (max-width: 1024px) {
       .kpi-grid, .kpi-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .hero-grid { grid-template-columns: 1fr; }
@@ -339,7 +332,7 @@
       .nav-label-head, .nav-label { display: none; }
       .nav-item { justify-content: center; padding: 12px 0; }
       .content-area { margin-left: 68px; padding: 16px; }
-      .kpi-grid, .kpi-grid-4, .kpi-grid-2 { grid-template-columns: 1fr; }
+      .kpi-grid, .kpi-grid-4 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -348,8 +341,8 @@
   <!-- TOPBAR -->
   <header class="topbar">
     <a href="#" class="brand" style="text-decoration: none;">
-      <span style="color: #ea580c; font-weight: 900; font-size: 22px; letter-spacing: -0.5px;">FLORZY</span>
-      <span style="color: #0f172a; font-weight: 700; font-size: 20px;">Insights</span>
+      <span class="brand-badge">FLORZY</span>
+      <span>Insights</span>
     </a>
     <div class="top-divider"></div>
     <div class="page-title" id="pageTitleText">Executive Overview</div>
@@ -360,7 +353,7 @@
       <span id="syncTimestamp">Snapshot loaded</span>
     </div>
 
-    <div class="scope-toggle" id="scopeToggleContainer">
+    <div class="scope-toggle">
       <button class="scope-btn active" id="btnScopeStore" onclick="switchScope('STORE')">Store</button>
       <button class="scope-btn" id="btnScopeCombined" onclick="switchScope('COMBINED')">Combined</button>
     </div>
@@ -404,47 +397,52 @@
         <div class="section-head">
           <div>
             <h1>Sales Overview</h1>
-            <p id="ovPeriodText">All-time & monthly performance overview</p>
+            <p id="ovPeriodText">Store performance • November 2026</p>
+          </div>
+          <div class="ov-month-box">
+            <label for="ov-month-input">Month &amp; Year</label>
+            <input type="month" id="ov-month-input" onchange="onOverviewMonthChange()" />
+            <div id="ov-sync-status">Updated</div>
           </div>
         </div>
 
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-title" id="ov-rev-lbl">Store Revenue</div>
+            <div class="kpi-title" id="ov-rev-lbl">Store Revenue • All Time</div>
             <div class="kpi-value" id="ov-rev-val">-</div>
-            <div class="kpi-subtitle" id="ov-rev-note">Store orders all-time</div>
+            <div class="kpi-subtitle" id="ov-rev-note">Store orders only</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-title" id="ov-mrev-lbl">Selected Month Revenue</div>
+            <div class="kpi-title" id="ov-mrev-lbl">November 2026 Revenue</div>
             <div class="kpi-value" id="ov-mrev-val">-</div>
-            <div class="kpi-subtitle">Current month snapshot</div>
+            <div class="kpi-subtitle">Based on selected month and scope</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-title">Monthly Bookings</div>
+            <div class="kpi-title">Selected Month Bookings</div>
             <div class="kpi-value" id="ov-book-val">-</div>
-            <div class="kpi-subtitle">Completed orders in selected month</div>
+            <div class="kpi-subtitle">Unique order IDs in selected month</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-title">Unique Customers</div>
             <div class="kpi-value" id="ov-cust-val">-</div>
-            <div class="kpi-subtitle">Distinct customer phones</div>
+            <div class="kpi-subtitle">Unique phone numbers in selected month</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-title">Store Conversion</div>
+            <div class="kpi-title">Store Conversion %</div>
             <div class="kpi-value" id="ov-sconv-val">-</div>
-            <div class="kpi-subtitle">Store bookings / visitors</div>
+            <div class="kpi-subtitle">Unique Store bookings / unique Store visitors</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-title">Combined Conversion</div>
+            <div class="kpi-title">Combined Conversion %</div>
             <div class="kpi-value" id="ov-cconv-val">-</div>
-            <div class="kpi-subtitle">All bookings / store visitors</div>
+            <div class="kpi-subtitle">Unique bookings across all channels / Store visitors</div>
           </div>
         </div>
 
         <div class="chart-card">
           <div class="chart-card-header">
             <div>
-              <div class="chart-card-title">Payment Collection Distribution</div>
+              <div class="chart-card-title" id="ov-payment-title">Payment Collection — Store</div>
               <div class="chart-card-sub">Received vs Outstanding balances</div>
             </div>
           </div>
@@ -534,9 +532,7 @@
           </div>
         </div>
 
-        <div class="kpi-grid-4 kpi-grid" id="rp-pills-container">
-          <!-- Populated dynamically -->
-        </div>
+        <div class="kpi-grid-4 kpi-grid" id="rp-pills-container"></div>
 
         <div class="chart-card">
           <div class="chart-card-header">
@@ -780,17 +776,70 @@
       renderRevenueTrend();
     }
 
-    // 1. RENDER OVERVIEW
+    // 1. OVERVIEW HANDLERS
+    function onOverviewMonthChange() {
+      renderOverview();
+    }
+
     function renderOverview() {
       if (!rawData) return;
-      const data = currentScope === 'COMBINED' ? rawData.overviewCombined : rawData.overviewStore;
+
+      const monthInput = document.getElementById('ov-month-input');
+      let selectedMonth = monthInput ? monthInput.value : '';
+
+      // Initialize min, max bounds and initial value
+      const months = rawData.availableMonths || [];
+      if (months.length > 0 && monthInput) {
+        monthInput.min = months[months.length - 1];
+        monthInput.max = months[0];
+        if (!monthInput.value) {
+          monthInput.value = months[0];
+          selectedMonth = months[0];
+        }
+      } else if (!selectedMonth) {
+        const now = new Date();
+        selectedMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+        if (monthInput) monthInput.value = selectedMonth;
+      }
+
+      // Retrieve month snapshot
+      let data = null;
+      const historySource = currentScope === 'COMBINED' 
+        ? rawData.overviewHistoryCombined 
+        : rawData.overviewHistoryStore;
+
+      if (historySource && historySource[selectedMonth]) {
+        data = historySource[selectedMonth];
+      } else {
+        data = currentScope === 'COMBINED' ? rawData.overviewCombined : rawData.overviewStore;
+      }
+
       if (!data) return;
 
       const k = data.kpis || {};
       const p = data.paymentCollection || {};
 
-      document.getElementById('ov-rev-lbl').textContent = currentScope === 'COMBINED' ? 'Combined Revenue' : 'Store Revenue';
-      document.getElementById('ov-rev-note').textContent = currentScope === 'COMBINED' ? 'Store + CDT + Online' : 'Store orders only';
+      let monthLabel = data.monthLabel;
+      if (!monthLabel && selectedMonth) {
+        const parts = selectedMonth.split('-');
+        const d = new Date(Number(parts[0]), Number(parts[1]) - 1, 1);
+        monthLabel = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+      }
+
+      // Update text
+      const periodEl = document.getElementById('ovPeriodText');
+      if (periodEl) periodEl.textContent = (currentScope === 'COMBINED' ? 'Combined performance • ' : 'Store performance • ') + monthLabel;
+
+      const headRevLbl = document.getElementById('ov-rev-lbl');
+      if (headRevLbl) headRevLbl.textContent = currentScope === 'COMBINED' ? 'Combined Revenue • All Time' : 'Store Revenue • All Time';
+
+      const mRevLbl = document.getElementById('ov-mrev-lbl');
+      if (mRevLbl) mRevLbl.textContent = monthLabel + ' Revenue';
+
+      const payTitle = document.getElementById('ov-payment-title');
+      if (payTitle) payTitle.textContent = 'Payment Collection — ' + (currentScope === 'COMBINED' ? 'Combined' : 'Store');
+
+      // Update numbers
       document.getElementById('ov-rev-val').textContent = fmtMoney(k.totalRevenue);
       document.getElementById('ov-mrev-val').textContent = fmtMoney(k.thisMonthRevenue);
       document.getElementById('ov-book-val').textContent = (Number(k.totalBookings) || 0).toLocaleString('en-IN');
@@ -798,6 +847,7 @@
       document.getElementById('ov-sconv-val').textContent = fmtPct(k.storeConversion);
       document.getElementById('ov-cconv-val').textContent = fmtPct(k.combinedConversion);
 
+      // Render Donut Chart
       if (window.Plotly) {
         Plotly.newPlot('ov-chart-payment', [{
           type: 'pie',
@@ -816,7 +866,7 @@
       }
     }
 
-    // 2. RENDER REVENUE TREND
+    // 2. REVENUE TREND
     function renderRevenueTrend() {
       if (!rawData || !rawData.revenueTotal) return;
       const d = rawData.revenueTotal;
@@ -829,7 +879,6 @@
       document.getElementById('rv-least-date').textContent = fmtDate(d.leastDate);
       document.getElementById('rv-today-val').textContent = fmtMoney(d.todayRevenue);
 
-      // Calculate this week sum
       const thisMon = d.thisMonday;
       let weekSum = 0;
       dates.forEach((dt, i) => {
@@ -839,7 +888,6 @@
       document.getElementById('rv-week-lbl').textContent = 'Since ' + fmtDate(thisMon);
 
       if (window.Plotly && dates.length) {
-        // Rolling Chart
         Plotly.newPlot('rv-chart-rolling', [{
           x: dates.map(fmtDate),
           y: values,
@@ -853,7 +901,6 @@
           font: { family: 'Plus Jakarta Sans, sans-serif' }
         }, { responsive: true, displayModeBar: false });
 
-        // Monthly Bar Chart
         if (d.monthly && d.monthly.dates) {
           Plotly.newPlot('rv-chart-monthly', [{
             x: d.monthly.dates.map(fmtMonth),
@@ -867,7 +914,6 @@
           }, { responsive: true, displayModeBar: false });
         }
 
-        // Weekly Bar Chart
         if (d.weekly && d.weekly.dates) {
           Plotly.newPlot('rv-chart-weekly', [{
             x: d.weekly.dates.map(fmtDate),
@@ -883,13 +929,12 @@
       }
     }
 
-    // 3. RENDER REP PERFORMANCE
+    // 3. REP PERFORMANCE
     function renderRepPerformance() {
       if (!rawData || !rawData.conversion) return;
       const w = rawData.conversion.weekly || {};
       const m = rawData.conversion.monthly || {};
 
-      // Render Pills
       const pillsBox = document.getElementById('rp-pills-container');
       if (w.repBookings && w.repBookings.length) {
         const wi = w.repBookings.length - 1;
@@ -915,7 +960,7 @@
       }
     }
 
-    // 4. RENDER CONVERSION RULES
+    // 4. CONVERSION RULES
     function renderConversion() {
       if (!rawData || !rawData.repPerf) return;
       const m = rawData.repPerf.monthly || {};
@@ -938,7 +983,7 @@
       }
     }
 
-    // 5. RENDER ORDER BUCKETS
+    // 5. ORDER BUCKETS
     function renderBuckets() {
       if (!rawData || !rawData.buckets) return;
       const b = rawData.buckets;
@@ -976,7 +1021,7 @@
       }
     }
 
-    // 6. RENDER TOP PERFORMERS
+    // 6. TOP PERFORMERS
     function renderTopPerformers() {
       if (!rawData || !rawData.topPerformers) return;
       const tp = rawData.topPerformers;
@@ -1000,7 +1045,6 @@
         document.getElementById('hero-conv-consulted').textContent = (c.totalConsulted || 0).toLocaleString('en-IN');
       }
 
-      // Ranking Charts
       const reps = tp.repList || [];
       if (window.Plotly && reps.length) {
         Plotly.newPlot('tp-chart-rev-rank', [{
@@ -1030,7 +1074,6 @@
       }
     }
 
-    // Auto-fetch Snapshot
     async function loadSnapshot() {
       try {
         let res = await fetch('data.json?v=' + Date.now());
@@ -1045,7 +1088,7 @@
         renderCurrentTab();
       } catch (e) {
         console.error('Snapshot load error:', e);
-        document.getElementById('syncTimestamp').textContent = 'Data snapshot loading error';
+        document.getElementById('syncTimestamp').textContent = 'Data snapshot error';
       }
     }
 
