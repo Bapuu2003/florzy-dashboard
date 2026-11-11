@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T11:20:49.676Z",
+  "updatedAt": "2026-11-11T11:58:00.157Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -19,34 +19,34 @@
     "selectedMonth": "",
     "monthLabel": "All Time",
     "kpis": {
-      "totalRevenue": 250083209,
-      "totalBookings": 7009,
-      "totalUniqueCustomers": 3892,
+      "totalRevenue": 250894646,
+      "totalBookings": 7013,
+      "totalUniqueCustomers": 3895,
       "conversion": 43.2,
-      "bookedCustomers": 3892,
+      "bookedCustomers": 3895,
       "uniqueVisitors": 9016,
-      "aov": 35680.3,
+      "aov": 35775.65,
       "median": 9690,
       "storeConversion": 43.2,
-      "combinedConversion": 47.1
+      "combinedConversion": 47.2
     },
     "paymentCollection": {
-      "received": 36453679,
-      "outstanding": 5075785,
-      "total": 41529464
+      "received": 36510560,
+      "outstanding": 5830342,
+      "total": 42340901
     },
     "topSalesRep": {
       "email": "sai prasad",
       "name": "Sai Prasad",
-      "revenue": 32137798,
-      "bookings": 542
+      "revenue": 32940506,
+      "bookings": 544
     },
     "topReps": [
       {
         "email": "sai prasad",
         "name": "Sai Prasad",
-        "revenue": 32137798,
-        "bookings": 542
+        "revenue": 32940506,
+        "bookings": 544
       },
       {
         "email": "sagar modugu",
@@ -57,14 +57,14 @@
       {
         "email": "rituraj",
         "name": "Rituraj",
-        "revenue": 19900825,
-        "bookings": 559
+        "revenue": 19904706,
+        "bookings": 560
       },
       {
         "email": "shubham roy",
         "name": "Shubham Roy",
-        "revenue": 17989910,
-        "bookings": 496
+        "revenue": 17994758,
+        "bookings": 497
       },
       {
         "email": "priyanshu bansal",
@@ -79,34 +79,34 @@
     "selectedMonth": "",
     "monthLabel": "All Time",
     "kpis": {
-      "totalRevenue": 257011827,
-      "totalBookings": 7594,
-      "totalUniqueCustomers": 4251,
-      "conversion": 47.1,
-      "bookedCustomers": 4251,
+      "totalRevenue": 257823264,
+      "totalBookings": 7598,
+      "totalUniqueCustomers": 4254,
+      "conversion": 47.2,
+      "bookedCustomers": 4254,
       "uniqueVisitors": 9016,
-      "aov": 33844.06,
+      "aov": 33933.04,
       "median": 9019,
       "storeConversion": 43.2,
-      "combinedConversion": 47.1
+      "combinedConversion": 47.2
     },
     "paymentCollection": {
-      "received": 38512063,
-      "outstanding": 5162828,
-      "total": 43674891
+      "received": 38568944,
+      "outstanding": 5917385,
+      "total": 44486328
     },
     "topSalesRep": {
       "email": "sai prasad",
       "name": "Sai Prasad",
-      "revenue": 32137798,
-      "bookings": 542
+      "revenue": 32940506,
+      "bookings": 544
     },
     "topReps": [
       {
         "email": "sai prasad",
         "name": "Sai Prasad",
-        "revenue": 32137798,
-        "bookings": 542
+        "revenue": 32940506,
+        "bookings": 544
       },
       {
         "email": "sagar modugu",
@@ -117,14 +117,14 @@
       {
         "email": "rituraj",
         "name": "Rituraj",
-        "revenue": 19900825,
-        "bookings": 559
+        "revenue": 19904706,
+        "bookings": 560
       },
       {
         "email": "shubham roy",
         "name": "Shubham Roy",
-        "revenue": 17989910,
-        "bookings": 496
+        "revenue": 17994758,
+        "bookings": 497
       },
       {
         "email": "priyanshu bansal",
@@ -140,34 +140,40 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 7724368,
-        "totalBookings": 252,
-        "totalUniqueCustomers": 231,
-        "conversion": 123.5,
-        "bookedCustomers": 231,
+        "totalRevenue": 8535805,
+        "totalBookings": 256,
+        "totalUniqueCustomers": 234,
+        "conversion": 125.1,
+        "bookedCustomers": 234,
         "uniqueVisitors": 187,
-        "aov": 30652.25,
+        "aov": 33342.99,
         "median": 8863.5,
-        "storeConversion": 123.5,
-        "combinedConversion": 136.4
+        "storeConversion": 125.1,
+        "combinedConversion": 138
       },
       "paymentCollection": {
-        "received": 5894353,
-        "outstanding": 1633857,
-        "total": 7528210
+        "received": 5951234,
+        "outstanding": 2388413,
+        "total": 8339647
       },
       "topSalesRep": {
         "email": "rituraj",
         "name": "Rituraj",
-        "revenue": 1165233,
-        "bookings": 21
+        "revenue": 1169114,
+        "bookings": 22
       },
       "topReps": [
         {
           "email": "rituraj",
           "name": "Rituraj",
-          "revenue": 1165233,
-          "bookings": 21
+          "revenue": 1169114,
+          "bookings": 22
+        },
+        {
+          "email": "sai prasad",
+          "name": "Sai Prasad",
+          "revenue": 1132162,
+          "bookings": 10
         },
         {
           "email": "manoj l",
@@ -186,12 +192,6 @@
           "name": "Umesh Sahu",
           "revenue": 633915,
           "bookings": 20
-        },
-        {
-          "email": "ajil nair",
-          "name": "Ajil Nair",
-          "revenue": 625137,
-          "bookings": 12
         }
       ]
     },
@@ -862,34 +862,40 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 8134816,
-        "totalBookings": 279,
-        "totalUniqueCustomers": 255,
-        "conversion": 136.4,
-        "bookedCustomers": 255,
+        "totalRevenue": 8946253,
+        "totalBookings": 283,
+        "totalUniqueCustomers": 258,
+        "conversion": 138,
+        "bookedCustomers": 258,
         "uniqueVisitors": 187,
-        "aov": 29157.05,
+        "aov": 31612.2,
         "median": 8651,
-        "storeConversion": 123.5,
-        "combinedConversion": 136.4
+        "storeConversion": 125.1,
+        "combinedConversion": 138
       },
       "paymentCollection": {
-        "received": 6217756,
-        "outstanding": 1720902,
-        "total": 7938658
+        "received": 6274637,
+        "outstanding": 2475458,
+        "total": 8750095
       },
       "topSalesRep": {
         "email": "rituraj",
         "name": "Rituraj",
-        "revenue": 1165233,
-        "bookings": 21
+        "revenue": 1169114,
+        "bookings": 22
       },
       "topReps": [
         {
           "email": "rituraj",
           "name": "Rituraj",
-          "revenue": 1165233,
-          "bookings": 21
+          "revenue": 1169114,
+          "bookings": 22
+        },
+        {
+          "email": "sai prasad",
+          "name": "Sai Prasad",
+          "revenue": 1132162,
+          "bookings": 10
         },
         {
           "email": "manoj l",
@@ -908,12 +914,6 @@
           "name": "Umesh Sahu",
           "revenue": 633915,
           "bookings": 20
-        },
-        {
-          "email": "ajil nair",
-          "name": "Ajil Nair",
-          "revenue": 625137,
-          "bookings": 12
         }
       ]
     },
@@ -1619,7 +1619,7 @@
       29102,
       240763,
       385331,
-      28600,
+      840037.2,
       0,
       0,
       0,
@@ -1634,7 +1634,7 @@
     "windowStart": "2026-10-26",
     "windowEnd": "2026-11-15",
     "today": "2026-11-11",
-    "todayRevenue": 28600,
+    "todayRevenue": 840037.2,
     "mondays": [
       "2026-11-09",
       "2026-11-02",
@@ -2564,7 +2564,7 @@
         29102,
         240763,
         385331,
-        28600
+        840037.2
       ]
     },
     "weekly": {
@@ -2670,7 +2670,7 @@
         9144836.82,
         7908684,
         6182766.9,
-        654694
+        1466131.2
       ],
       "aov": [
         11625,
@@ -2722,7 +2722,7 @@
         40286,
         37841,
         37700,
-        15588
+        31872
       ],
       "uniqueCustomers": [
         3,
@@ -2774,7 +2774,7 @@
         227,
         209,
         164,
-        42
+        46
       ]
     },
     "monthly": {
@@ -2804,7 +2804,7 @@
         29896943,
         44008334.48,
         36063091.2,
-        7724367.9
+        8535805.1
       ],
       "aov": [
         18312,
@@ -2818,7 +2818,7 @@
         45230,
         59551,
         43766,
-        33439
+        36478
       ],
       "uniqueCustomers": [
         54,
@@ -2832,7 +2832,7 @@
         661,
         739,
         824,
-        231
+        234
       ],
       "median": [
         5221,
@@ -2846,16 +2846,16 @@
         15190,
         16160,
         14747,
-        10389
+        10931
       ]
     },
     "stats": {
-      "totalRev": 250083208.75000003,
-      "thisWeekRev": 654694,
-      "thisMonthRev": 7724367.9,
-      "totalBookings": 7009,
-      "thisWeekBook": 43,
-      "thisMonthBook": 252
+      "totalRev": 250894645.95000002,
+      "thisWeekRev": 1466131.2,
+      "thisMonthRev": 8535805.1,
+      "totalBookings": 7013,
+      "thisWeekBook": 47,
+      "thisMonthBook": 256
     },
     "reps": [
       {
@@ -3174,7 +3174,7 @@
         81,
         79,
         64,
-        71,
+        72,
         83,
         90,
         73,
@@ -3222,7 +3222,7 @@
         36.3,
         34.6,
         34.2,
-        35.3,
+        35.8,
         39.3,
         37.2,
         38.4,
@@ -3318,7 +3318,7 @@
         81,
         79,
         64,
-        71,
+        72,
         83,
         90,
         73,
@@ -3366,7 +3366,7 @@
         36.3,
         34.6,
         34.2,
-        35.3,
+        35.8,
         39.3,
         37.2,
         38.4,
@@ -3488,7 +3488,7 @@
         218,
         201,
         160,
-        42
+        46
       ],
       "bookingWeekConversion": [
         50,
@@ -3571,7 +3571,7 @@
         129,
         258,
         288,
-        361,
+        362,
         301,
         322,
         362,
@@ -3584,7 +3584,7 @@
         59.2,
         46.7,
         46.6,
-        36.1,
+        36.2,
         36.1,
         35.4,
         35.1,
@@ -3610,7 +3610,7 @@
         129,
         258,
         288,
-        361,
+        362,
         301,
         322,
         362,
@@ -3623,7 +3623,7 @@
         59.2,
         46.7,
         46.6,
-        36.1,
+        36.2,
         36.1,
         35.4,
         35.1,
@@ -3655,7 +3655,7 @@
         622,
         677,
         772,
-        227
+        230
       ],
       "bookingMonthConversion": [
         26.8,
@@ -3668,7 +3668,7 @@
         47.3,
         47.7,
         50.8,
-        121.4
+        123
       ]
     },
     "reps": [
@@ -3746,7 +3746,7 @@
       }
     ],
     "totalConsulted": 7550,
-    "totalBooked": 2754
+    "totalBooked": 2755
   },
   "conversion": {
     "weekly": {
@@ -3844,7 +3844,7 @@
         218,
         201,
         160,
-        42
+        46
       ],
       "repConsultations": [
         4,
@@ -4036,7 +4036,7 @@
         12.9,
         11.9,
         9.6,
-        2.5
+        2.7
       ],
       "peakBookingRep": [
         "Pawan",
@@ -4400,7 +4400,7 @@
         622,
         677,
         772,
-        227
+        230
       ],
       "repConsultations": [
         112,
@@ -4426,7 +4426,7 @@
         47.3,
         47.7,
         50.8,
-        121.4
+        123
       ],
       "peakBookings": [
         20,
@@ -4452,7 +4452,7 @@
         37.4,
         41.4,
         46.2,
-        13.8
+        13.9
       ],
       "peakBookingRep": [
         "Pawan",
@@ -4530,7 +4530,7 @@
         43.9,
         47.5,
         50.4,
-        92.2
+        93.8
       ],
       "peakConvRep": [
         "Pawan",
@@ -4552,13 +4552,13 @@
       {
         "email": "sai prasad",
         "name": "Sai Prasad",
-        "revenue": 32137798,
-        "bookings": 542,
-        "uniqueCustomers": 343,
+        "revenue": 32940506,
+        "bookings": 544,
+        "uniqueCustomers": 345,
         "totalConsultationVisits": 875,
         "uniqueConsulted": 669,
-        "convPct": 51.3,
-        "totalBooked": 343,
+        "convPct": 51.6,
+        "totalBooked": 345,
         "totalConsulted": 669
       },
       {
@@ -4576,8 +4576,8 @@
       {
         "email": "rituraj",
         "name": "Rituraj",
-        "revenue": 19900825,
-        "bookings": 559,
+        "revenue": 19904706,
+        "bookings": 560,
         "uniqueCustomers": 322,
         "totalConsultationVisits": 863,
         "uniqueConsulted": 620,
@@ -4588,13 +4588,13 @@
       {
         "email": "shubham roy",
         "name": "Shubham Roy",
-        "revenue": 17989910,
-        "bookings": 496,
-        "uniqueCustomers": 316,
+        "revenue": 17994758,
+        "bookings": 497,
+        "uniqueCustomers": 317,
         "totalConsultationVisits": 794,
         "uniqueConsulted": 597,
-        "convPct": 52.9,
-        "totalBooked": 316,
+        "convPct": 53.1,
+        "totalBooked": 317,
         "totalConsulted": 597
       },
       {
@@ -4757,13 +4757,13 @@
     "topRevRep": {
       "email": "sai prasad",
       "name": "Sai Prasad",
-      "revenue": 32137798,
-      "bookings": 542,
-      "uniqueCustomers": 343,
+      "revenue": 32940506,
+      "bookings": 544,
+      "uniqueCustomers": 345,
       "totalConsultationVisits": 875,
       "uniqueConsulted": 669,
-      "convPct": 51.3,
-      "totalBooked": 343,
+      "convPct": 51.6,
+      "totalBooked": 345,
       "totalConsulted": 669,
       "monthlyRevDates": [
         "2026-01-01",
@@ -4789,7 +4789,7 @@
         2780520,
         5689244,
         3856936,
-        329454
+        1132162.2
       ],
       "weeklyRevDates": [
         "2026-01-26",
@@ -4877,19 +4877,19 @@
         873491,
         986200,
         208899,
-        85095
+        887803.2
       ]
     },
     "topConvRep": {
       "email": "shubham roy",
       "name": "Shubham Roy",
-      "revenue": 17989910,
-      "bookings": 496,
-      "uniqueCustomers": 316,
+      "revenue": 17994758,
+      "bookings": 497,
+      "uniqueCustomers": 317,
       "totalConsultationVisits": 794,
       "uniqueConsulted": 597,
-      "convPct": 52.9,
-      "totalBooked": 316,
+      "convPct": 53.1,
+      "totalBooked": 317,
       "totalConsulted": 597,
       "convMonthDates": [
         "2026-03-01",
@@ -4911,7 +4911,7 @@
         61.4,
         54.1,
         58.8,
-        106.7
+        113.3
       ],
       "convMonthConsulted": [
         57,
@@ -4933,7 +4933,7 @@
         54,
         59,
         47,
-        16
+        17
       ],
       "convWeekDates": [
         "2026-03-09",
@@ -5085,7 +5085,7 @@
         10,
         15,
         8,
-        4
+        5
       ]
     }
   },
@@ -5099,23 +5099,23 @@
       "> ₹5L"
     ],
     "counts": [
-      5018,
+      5020,
       816,
       556,
-      499,
+      500,
       87,
-      33
+      34
     ],
     "revenues": [
-      39154002.73999999,
+      39162731.73999999,
       29206918.52,
       39024742.769999996,
-      82667467.02,
+      82960316.02,
       32771897.03,
-      27258180.67
+      27768039.87
     ],
-    "totalOrders": 7009,
-    "totalRevenue": 250083208.75,
+    "totalOrders": 7013,
+    "totalRevenue": 250894645.95,
     "topBucketCount": "< ₹25K",
     "topBucketRevenue": "₹1L–3L",
     "reps": [
