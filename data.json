@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T10:24:50.180Z",
+  "updatedAt": "2026-11-11T11:20:49.676Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -140,21 +140,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 7715989,
-        "totalBookings": 251,
-        "totalUniqueCustomers": 230,
-        "conversion": 123,
-        "bookedCustomers": 230,
+        "totalRevenue": 7724368,
+        "totalBookings": 252,
+        "totalUniqueCustomers": 231,
+        "conversion": 123.5,
+        "bookedCustomers": 231,
         "uniqueVisitors": 187,
-        "aov": 30740.99,
-        "median": 8934,
-        "storeConversion": 123,
-        "combinedConversion": 135.8
+        "aov": 30652.25,
+        "median": 8863.5,
+        "storeConversion": 123.5,
+        "combinedConversion": 136.4
       },
       "paymentCollection": {
-        "received": 5885974,
+        "received": 5894353,
         "outstanding": 1633857,
-        "total": 7519831
+        "total": 7528210
       },
       "topSalesRep": {
         "email": "rituraj",
@@ -862,21 +862,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 8126437,
-        "totalBookings": 278,
-        "totalUniqueCustomers": 254,
-        "conversion": 135.8,
-        "bookedCustomers": 254,
+        "totalRevenue": 8134816,
+        "totalBookings": 279,
+        "totalUniqueCustomers": 255,
+        "conversion": 136.4,
+        "bookedCustomers": 255,
         "uniqueVisitors": 187,
-        "aov": 29231.79,
-        "median": 8686,
-        "storeConversion": 123,
-        "combinedConversion": 135.8
+        "aov": 29157.05,
+        "median": 8651,
+        "storeConversion": 123.5,
+        "combinedConversion": 136.4
       },
       "paymentCollection": {
-        "received": 6209377,
+        "received": 6217756,
         "outstanding": 1720902,
-        "total": 7930279
+        "total": 7938658
       },
       "topSalesRep": {
         "email": "rituraj",
