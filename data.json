@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T07:05:14.958Z",
+  "updatedAt": "2026-11-11T07:36:45.603Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -19,17 +19,17 @@
     "selectedMonth": "2026-11-01",
     "monthLabel": "November 2026",
     "kpis": {
-      "totalRevenue": 250057758,
-      "thisMonthRevenue": 7698917,
-      "totalBookings": 248,
-      "totalUniqueCustomers": 227,
-      "storeConversion": 56.5,
-      "combinedConversion": 61.9
+      "totalRevenue": 250063864,
+      "thisMonthRevenue": 7705023,
+      "totalBookings": 249,
+      "totalUniqueCustomers": 228,
+      "storeConversion": 56.4,
+      "combinedConversion": 62.1
     },
     "paymentCollection": {
-      "received": 5868902,
+      "received": 5875008,
       "outstanding": 1633857,
-      "total": 7502759
+      "total": 7508865
     },
     "topSalesRep": {
       "email": "rituraj",
@@ -75,17 +75,17 @@
     "selectedMonth": "2026-11-01",
     "monthLabel": "November 2026",
     "kpis": {
-      "totalRevenue": 256915596,
-      "thisMonthRevenue": 8038585,
-      "totalBookings": 272,
-      "totalUniqueCustomers": 249,
-      "storeConversion": 56.5,
-      "combinedConversion": 61.9
+      "totalRevenue": 256961134,
+      "thisMonthRevenue": 8084123,
+      "totalBookings": 274,
+      "totalUniqueCustomers": 251,
+      "storeConversion": 56.4,
+      "combinedConversion": 62.1
     },
     "paymentCollection": {
-      "received": 6121525,
+      "received": 6167063,
       "outstanding": 1720902,
-      "total": 7842427
+      "total": 7887965
     },
     "topSalesRep": {
       "email": "rituraj",
@@ -136,8 +136,8 @@
         "thisMonthRevenue": 7698917,
         "totalBookings": 248,
         "totalUniqueCustomers": 227,
-        "storeConversion": 56.5,
-        "combinedConversion": 61.9
+        "storeConversion": 56.2,
+        "combinedConversion": 61.6
       },
       "paymentCollection": {
         "received": 5868902,
@@ -188,7 +188,7 @@
       "selectedMonth": "2026-10",
       "monthLabel": "October 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 36063091,
         "totalBookings": 1085,
         "totalUniqueCustomers": 824,
@@ -244,7 +244,7 @@
       "selectedMonth": "2026-09",
       "monthLabel": "September 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 44008334,
         "totalBookings": 967,
         "totalUniqueCustomers": 739,
@@ -300,7 +300,7 @@
       "selectedMonth": "2026-08",
       "monthLabel": "August 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 29896943,
         "totalBookings": 886,
         "totalUniqueCustomers": 661,
@@ -356,7 +356,7 @@
       "selectedMonth": "2026-07",
       "monthLabel": "July 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 31142877,
         "totalBookings": 818,
         "totalUniqueCustomers": 597,
@@ -412,7 +412,7 @@
       "selectedMonth": "2026-06",
       "monthLabel": "June 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 27478046,
         "totalBookings": 715,
         "totalUniqueCustomers": 550,
@@ -468,7 +468,7 @@
       "selectedMonth": "2026-05",
       "monthLabel": "May 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 23464818,
         "totalBookings": 647,
         "totalUniqueCustomers": 494,
@@ -524,7 +524,7 @@
       "selectedMonth": "2026-04",
       "monthLabel": "April 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 17702146,
         "totalBookings": 599,
         "totalUniqueCustomers": 486,
@@ -580,7 +580,7 @@
       "selectedMonth": "2026-03",
       "monthLabel": "March 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 15767889,
         "totalBookings": 436,
         "totalUniqueCustomers": 357,
@@ -636,7 +636,7 @@
       "selectedMonth": "2026-02",
       "monthLabel": "February 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 10426426,
         "totalBookings": 333,
         "totalUniqueCustomers": 243,
@@ -692,7 +692,7 @@
       "selectedMonth": "2026-01",
       "monthLabel": "January 2026",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 5419448,
         "totalBookings": 197,
         "totalUniqueCustomers": 146,
@@ -748,7 +748,7 @@
       "selectedMonth": "2025-12",
       "monthLabel": "December 2025",
       "kpis": {
-        "totalRevenue": 250057758,
+        "totalRevenue": 250063864,
         "thisMonthRevenue": 988823,
         "totalBookings": 74,
         "totalUniqueCustomers": 54,
@@ -806,17 +806,17 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 256915596,
-        "thisMonthRevenue": 8038585,
-        "totalBookings": 272,
-        "totalUniqueCustomers": 249,
-        "storeConversion": 56.5,
-        "combinedConversion": 61.9
+        "totalRevenue": 256961134,
+        "thisMonthRevenue": 8084123,
+        "totalBookings": 274,
+        "totalUniqueCustomers": 251,
+        "storeConversion": 56.4,
+        "combinedConversion": 62.1
       },
       "paymentCollection": {
-        "received": 6121525,
+        "received": 6167063,
         "outstanding": 1720902,
-        "total": 7842427
+        "total": 7887965
       },
       "topSalesRep": {
         "email": "rituraj",
@@ -862,7 +862,7 @@
       "selectedMonth": "2026-10",
       "monthLabel": "October 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 37800062,
         "totalBookings": 1215,
         "totalUniqueCustomers": 922,
@@ -918,7 +918,7 @@
       "selectedMonth": "2026-09",
       "monthLabel": "September 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 45581595,
         "totalBookings": 1089,
         "totalUniqueCustomers": 835,
@@ -974,7 +974,7 @@
       "selectedMonth": "2026-08",
       "monthLabel": "August 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 30642425,
         "totalBookings": 987,
         "totalUniqueCustomers": 743,
@@ -1030,7 +1030,7 @@
       "selectedMonth": "2026-07",
       "monthLabel": "July 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 31767036,
         "totalBookings": 888,
         "totalUniqueCustomers": 660,
@@ -1086,7 +1086,7 @@
       "selectedMonth": "2026-06",
       "monthLabel": "June 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 28223596,
         "totalBookings": 772,
         "totalUniqueCustomers": 596,
@@ -1142,7 +1142,7 @@
       "selectedMonth": "2026-05",
       "monthLabel": "May 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 24101106,
         "totalBookings": 681,
         "totalUniqueCustomers": 518,
@@ -1198,7 +1198,7 @@
       "selectedMonth": "2026-04",
       "monthLabel": "April 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 18051997,
         "totalBookings": 633,
         "totalUniqueCustomers": 513,
@@ -1254,7 +1254,7 @@
       "selectedMonth": "2026-03",
       "monthLabel": "March 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 15874497,
         "totalBookings": 446,
         "totalUniqueCustomers": 365,
@@ -1310,7 +1310,7 @@
       "selectedMonth": "2026-02",
       "monthLabel": "February 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 10426426,
         "totalBookings": 333,
         "totalUniqueCustomers": 243,
@@ -1366,7 +1366,7 @@
       "selectedMonth": "2026-01",
       "monthLabel": "January 2026",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 5419448,
         "totalBookings": 197,
         "totalUniqueCustomers": 146,
@@ -1422,7 +1422,7 @@
       "selectedMonth": "2025-12",
       "monthLabel": "December 2025",
       "kpis": {
-        "totalRevenue": 256915596,
+        "totalRevenue": 256961134,
         "thisMonthRevenue": 988823,
         "totalBookings": 74,
         "totalUniqueCustomers": 54,
@@ -1515,7 +1515,7 @@
       29102,
       240763,
       385331,
-      3149,
+      9255,
       0,
       0,
       0,
@@ -1530,7 +1530,7 @@
     "windowStart": "2026-10-26",
     "windowEnd": "2026-11-15",
     "today": "2026-11-11",
-    "todayRevenue": 3149,
+    "todayRevenue": 9255,
     "mondays": [
       "2026-11-09",
       "2026-11-02",
@@ -2460,7 +2460,7 @@
         29102,
         240763,
         385331,
-        3149
+        9255
       ]
     },
     "weekly": {
@@ -2566,7 +2566,7 @@
         9144836.82,
         7908684,
         6182766.9,
-        629243
+        635349
       ],
       "aov": [
         11625,
@@ -2618,7 +2618,7 @@
         40286,
         37841,
         37700,
-        16559
+        16291
       ],
       "uniqueCustomers": [
         3,
@@ -2670,7 +2670,7 @@
         227,
         209,
         164,
-        38
+        39
       ]
     },
     "monthly": {
@@ -2700,7 +2700,7 @@
         29896943,
         44008334.48,
         36063091.2,
-        7698916.9
+        7705022.9
       ],
       "aov": [
         18312,
@@ -2714,7 +2714,7 @@
         45230,
         59551,
         43766,
-        33916
+        33794
       ],
       "uniqueCustomers": [
         54,
@@ -2728,7 +2728,7 @@
         661,
         739,
         824,
-        227
+        228
       ],
       "median": [
         5221,
@@ -2742,16 +2742,16 @@
         15190,
         16160,
         14747,
-        11548
+        11511
       ]
     },
     "stats": {
-      "totalRev": 250057757.75000003,
-      "thisWeekRev": 629243,
-      "thisMonthRev": 7698916.9,
-      "totalBookings": 7005,
-      "thisWeekBook": 39,
-      "thisMonthBook": 248
+      "totalRev": 250063863.75000003,
+      "thisWeekRev": 635349,
+      "thisMonthRev": 7705022.9,
+      "totalBookings": 7006,
+      "thisWeekBook": 40,
+      "thisMonthBook": 249
     },
     "reps": [
       {
@@ -3048,7 +3048,7 @@
         285,
         193,
         132,
-        60
+        61
       ],
       "sameMonthConverted": [
         1,
@@ -3144,7 +3144,7 @@
         29.8,
         27.5,
         13.6,
-        6.7
+        6.6
       ],
       "consulted": [
         3,
@@ -3192,7 +3192,7 @@
         285,
         193,
         132,
-        60
+        61
       ],
       "booked": [
         1,
@@ -3288,7 +3288,7 @@
         29.8,
         27.5,
         13.6,
-        6.7
+        6.6
       ],
       "bookingWeekVisitors": [
         4,
@@ -3336,7 +3336,7 @@
         402,
         325,
         222,
-        98
+        100
       ],
       "bookingWeekConverted": [
         2,
@@ -3384,7 +3384,7 @@
         218,
         201,
         160,
-        38
+        39
       ],
       "bookingWeekConversion": [
         50,
@@ -3432,7 +3432,7 @@
         54.2,
         61.8,
         72.1,
-        38.8
+        39
       ]
     },
     "monthly": {
@@ -3460,7 +3460,7 @@
         1030,
         1062,
         1111,
-        253
+        254
       ],
       "sameMonthConverted": [
         40,
@@ -3499,7 +3499,7 @@
         1030,
         1062,
         1111,
-        253
+        254
       ],
       "booked": [
         40,
@@ -3538,7 +3538,7 @@
         1316,
         1419,
         1519,
-        401
+        403
       ],
       "bookingMonthConverted": [
         30,
@@ -3551,7 +3551,7 @@
         622,
         677,
         772,
-        223
+        224
       ],
       "bookingMonthConversion": [
         26.8,
@@ -3641,7 +3641,7 @@
         "name": "Pawan"
       }
     ],
-    "totalConsulted": 7696,
+    "totalConsulted": 7697,
     "totalBooked": 2767
   },
   "conversion": {
@@ -3740,7 +3740,7 @@
         218,
         201,
         160,
-        38
+        39
       ],
       "repConsultations": [
         4,
@@ -3788,7 +3788,7 @@
         402,
         325,
         222,
-        98
+        100
       ],
       "repConversionPct": [
         50,
@@ -3836,7 +3836,7 @@
         54.2,
         61.8,
         72.1,
-        38.8
+        39
       ],
       "peakBookings": [
         2,
@@ -3932,7 +3932,7 @@
         12.9,
         11.9,
         9.6,
-        2.2
+        2.3
       ],
       "peakBookingRep": [
         "Pawan",
@@ -4076,7 +4076,7 @@
         23.7,
         19.3,
         13.4,
-        5.8
+        5.9
       ],
       "peakConsultRep": [
         "Pawan",
@@ -4172,7 +4172,7 @@
         93.8,
         137.5,
         150,
-        150
+        133.3
       ],
       "avgConversionPct": [
         2.9,
@@ -4220,7 +4220,7 @@
         56.7,
         65.8,
         60.3,
-        24
+        22.9
       ],
       "peakConvRep": [
         "Pawan",
@@ -4296,7 +4296,7 @@
         622,
         677,
         772,
-        223
+        224
       ],
       "repConsultations": [
         112,
@@ -4309,7 +4309,7 @@
         1316,
         1419,
         1519,
-        401
+        403
       ],
       "repConversionPct": [
         26.8,
@@ -4348,7 +4348,7 @@
         37.4,
         41.4,
         46.2,
-        13.5
+        13.6
       ],
       "peakBookingRep": [
         "Pawan",
@@ -4387,7 +4387,7 @@
         79.8,
         86.2,
         91.3,
-        24.2
+        24.4
       ],
       "peakConsultRep": [
         "Kapil Shah",
@@ -4426,7 +4426,7 @@
         43.9,
         47.5,
         50.4,
-        69.8
+        69.9
       ],
       "peakConvRep": [
         "Pawan",
@@ -4520,14 +4520,14 @@
       {
         "email": "mitrabhanu padhi",
         "name": "Mitrabhanu Padhi",
-        "revenue": 14631711,
-        "bookings": 468,
+        "revenue": 14637817,
+        "bookings": 469,
         "uniqueCustomers": 280,
-        "totalConsultationVisits": 921,
-        "uniqueConsulted": 675,
-        "convPct": 41.5,
+        "totalConsultationVisits": 922,
+        "uniqueConsulted": 676,
+        "convPct": 41.4,
         "totalBooked": 280,
-        "totalConsulted": 675
+        "totalConsulted": 676
       },
       {
         "email": "pawan",
@@ -4595,7 +4595,7 @@
         "revenue": 6898688,
         "bookings": 228,
         "uniqueCustomers": 185,
-        "totalConsultationVisits": 822,
+        "totalConsultationVisits": 823,
         "uniqueConsulted": 651,
         "convPct": 28.4,
         "totalBooked": 185,
@@ -4995,7 +4995,7 @@
       "> ₹5L"
     ],
     "counts": [
-      5014,
+      5015,
       816,
       556,
       499,
@@ -5003,15 +5003,15 @@
       33
     ],
     "revenues": [
-      39128551.73999999,
+      39134657.73999999,
       29206918.52,
       39024742.769999996,
       82667467.02,
       32771897.03,
       27258180.67
     ],
-    "totalOrders": 7005,
-    "totalRevenue": 250057757.75,
+    "totalOrders": 7006,
+    "totalRevenue": 250063863.75,
     "topBucketCount": "< ₹25K",
     "topBucketRevenue": "₹1L–3L",
     "reps": [
