@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T08:03:06.761Z",
+  "updatedAt": "2026-11-11T08:31:59.270Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -136,8 +136,8 @@
         "thisMonthRevenue": 7705023,
         "totalBookings": 249,
         "totalUniqueCustomers": 228,
-        "storeConversion": 56.2,
-        "combinedConversion": 61.8
+        "storeConversion": 56,
+        "combinedConversion": 61.7
       },
       "paymentCollection": {
         "received": 5875008,
@@ -810,8 +810,8 @@
         "thisMonthRevenue": 8084123,
         "totalBookings": 274,
         "totalUniqueCustomers": 251,
-        "storeConversion": 56.2,
-        "combinedConversion": 61.8
+        "storeConversion": 56,
+        "combinedConversion": 61.7
       },
       "paymentCollection": {
         "received": 6167063,
