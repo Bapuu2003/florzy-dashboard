@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T17:37:11.231Z",
+  "updatedAt": "2026-11-11T18:12:56.525Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -140,21 +140,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 9977908,
-        "totalBookings": 271,
-        "totalUniqueCustomers": 245,
-        "conversion": 55.1,
-        "bookedCustomers": 245,
+        "totalRevenue": 10118968,
+        "totalBookings": 276,
+        "totalUniqueCustomers": 250,
+        "conversion": 56.2,
+        "bookedCustomers": 250,
         "uniqueVisitors": 445,
-        "aov": 36818.85,
-        "median": 8793,
-        "storeConversion": 55.1,
-        "combinedConversion": 60.7
+        "aov": 36662.93,
+        "median": 8791.5,
+        "storeConversion": 56.2,
+        "combinedConversion": 61.8
       },
       "paymentCollection": {
-        "received": 6389448,
+        "received": 6530508,
         "outstanding": 3392302,
-        "total": 9781750
+        "total": 9922810
       },
       "topSalesRep": {
         "email": "sai prasad",
@@ -190,8 +190,8 @@
         {
           "email": "kapil shah",
           "name": "Kapil Shah",
-          "revenue": 996567,
-          "bookings": 12
+          "revenue": 999011,
+          "bookings": 14
         }
       ]
     },
@@ -862,21 +862,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 10398667,
-        "totalBookings": 299,
-        "totalUniqueCustomers": 270,
-        "conversion": 60.7,
-        "bookedCustomers": 270,
+        "totalRevenue": 10539727,
+        "totalBookings": 304,
+        "totalUniqueCustomers": 275,
+        "conversion": 61.8,
+        "bookedCustomers": 275,
         "uniqueVisitors": 445,
-        "aov": 34778.15,
-        "median": 8680,
-        "storeConversion": 55.1,
-        "combinedConversion": 60.7
+        "aov": 34670.15,
+        "median": 8665.5,
+        "storeConversion": 56.2,
+        "combinedConversion": 61.8
       },
       "paymentCollection": {
-        "received": 6723162,
+        "received": 6864222,
         "outstanding": 3479347,
-        "total": 10202509
+        "total": 10343569
       },
       "topSalesRep": {
         "email": "sai prasad",
@@ -912,8 +912,8 @@
         {
           "email": "kapil shah",
           "name": "Kapil Shah",
-          "revenue": 996567,
-          "bookings": 12
+          "revenue": 999011,
+          "bookings": 14
         }
       ]
     },
