@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T12:23:27.031Z",
+  "updatedAt": "2026-11-12T13:00:52.189Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -19,21 +19,21 @@
     "selectedMonth": "",
     "monthLabel": "All Time",
     "kpis": {
-      "totalRevenue": 253132184,
-      "totalBookings": 7045,
+      "totalRevenue": 253184300,
+      "totalBookings": 7046,
       "totalUniqueCustomers": 3914,
       "conversion": 42.5,
       "bookedCustomers": 3914,
       "uniqueVisitors": 9203,
-      "aov": 35930.76,
-      "median": 9685,
+      "aov": 35933.05,
+      "median": 9687.5,
       "storeConversion": 42.5,
       "combinedConversion": 46.5
     },
     "paymentCollection": {
-      "received": 37914688,
+      "received": 37966804,
       "outstanding": 6663751,
-      "total": 44578439
+      "total": 44630555
     },
     "topSalesRep": {
       "email": "sai prasad",
@@ -51,8 +51,8 @@
       {
         "email": "sagar modugu",
         "name": "Sagar Modugu",
-        "revenue": 20145656,
-        "bookings": 599
+        "revenue": 20197772,
+        "bookings": 600
       },
       {
         "email": "rituraj",
@@ -79,21 +79,21 @@
     "selectedMonth": "",
     "monthLabel": "All Time",
     "kpis": {
-      "totalRevenue": 260087052,
-      "totalBookings": 7633,
-      "totalUniqueCustomers": 4275,
+      "totalRevenue": 260190349,
+      "totalBookings": 7636,
+      "totalUniqueCustomers": 4276,
       "conversion": 46.5,
-      "bookedCustomers": 4275,
+      "bookedCustomers": 4276,
       "uniqueVisitors": 9203,
-      "aov": 34074.03,
-      "median": 9008,
+      "aov": 34074.17,
+      "median": 9010,
       "storeConversion": 42.5,
       "combinedConversion": 46.5
     },
     "paymentCollection": {
-      "received": 39999322,
+      "received": 40102619,
       "outstanding": 6750794,
-      "total": 46750116
+      "total": 46853413
     },
     "topSalesRep": {
       "email": "sai prasad",
@@ -111,8 +111,8 @@
       {
         "email": "sagar modugu",
         "name": "Sagar Modugu",
-        "revenue": 20145656,
-        "bookings": 599
+        "revenue": 20197772,
+        "bookings": 600
       },
       {
         "email": "rituraj",
@@ -140,21 +140,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 10773343,
-        "totalBookings": 288,
-        "totalUniqueCustomers": 258,
-        "conversion": 55.6,
-        "bookedCustomers": 258,
+        "totalRevenue": 10825459,
+        "totalBookings": 289,
+        "totalUniqueCustomers": 259,
+        "conversion": 55.8,
+        "bookedCustomers": 259,
         "uniqueVisitors": 464,
-        "aov": 37407.44,
-        "median": 8791.5,
-        "storeConversion": 55.6,
-        "combinedConversion": 61.4
+        "aov": 37458.34,
+        "median": 8793,
+        "storeConversion": 55.8,
+        "combinedConversion": 62.1
       },
       "paymentCollection": {
-        "received": 7214293,
+        "received": 7266409,
         "outstanding": 3362892,
-        "total": 10577185
+        "total": 10629301
       },
       "topSalesRep": {
         "email": "sai prasad",
@@ -862,21 +862,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 11210041,
-        "totalBookings": 318,
-        "totalUniqueCustomers": 285,
-        "conversion": 61.4,
-        "bookedCustomers": 285,
+        "totalRevenue": 11313338,
+        "totalBookings": 321,
+        "totalUniqueCustomers": 288,
+        "conversion": 62.1,
+        "bookedCustomers": 288,
         "uniqueVisitors": 464,
-        "aov": 35251.7,
-        "median": 8609.5,
-        "storeConversion": 55.6,
-        "combinedConversion": 61.4
+        "aov": 35244.04,
+        "median": 8651,
+        "storeConversion": 55.8,
+        "combinedConversion": 62.1
       },
       "paymentCollection": {
-        "received": 7563946,
+        "received": 7667243,
         "outstanding": 3449937,
-        "total": 11013883
+        "total": 11117180
       },
       "topSalesRep": {
         "email": "sai prasad",
@@ -1620,7 +1620,7 @@
       240763,
       385331,
       2423200,
-      654375.25,
+      706491.25,
       0,
       0,
       0
@@ -1634,7 +1634,7 @@
     "windowStart": "2026-10-26",
     "windowEnd": "2026-11-15",
     "today": "2026-11-12",
-    "todayRevenue": 654375.25,
+    "todayRevenue": 706491.25,
     "mondays": [
       "2026-11-09",
       "2026-11-02",
