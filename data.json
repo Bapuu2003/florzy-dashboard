@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T18:23:10.118Z",
+  "updatedAt": "2026-11-12T19:12:05.492Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -1633,8 +1633,8 @@
     "lastMonday": "2026-11-02",
     "windowStart": "2026-10-26",
     "windowEnd": "2026-11-15",
-    "today": "2026-11-12",
-    "todayRevenue": 1511876.25,
+    "today": "2026-11-13",
+    "todayRevenue": 0,
     "mondays": [
       "2026-11-09",
       "2026-11-02",
