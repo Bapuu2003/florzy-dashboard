@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T09:23:34.553Z",
+  "updatedAt": "2026-11-13T09:52:35.237Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -24,11 +24,11 @@
       "totalUniqueCustomers": 3920,
       "conversion": 42.5,
       "bookedCustomers": 3920,
-      "uniqueVisitors": 9217,
+      "uniqueVisitors": 9219,
       "aov": 36085.77,
       "median": 9685,
       "storeConversion": 42.5,
-      "combinedConversion": 46.5
+      "combinedConversion": 46.4
     },
     "paymentCollection": {
       "received": 39400792,
@@ -82,13 +82,13 @@
       "totalRevenue": 262168555,
       "totalBookings": 7661,
       "totalUniqueCustomers": 4282,
-      "conversion": 46.5,
+      "conversion": 46.4,
       "bookedCustomers": 4282,
-      "uniqueVisitors": 9217,
+      "uniqueVisitors": 9219,
       "aov": 34221.19,
       "median": 9008,
       "storeConversion": 42.5,
-      "combinedConversion": 46.5
+      "combinedConversion": 46.4
     },
     "paymentCollection": {
       "received": 41536607,
@@ -140,21 +140,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 12672093,
-        "totalBookings": 311,
-        "totalUniqueCustomers": 275,
-        "conversion": 56.9,
-        "bookedCustomers": 275,
-        "uniqueVisitors": 483,
-        "aov": 40746.28,
-        "median": 8795,
-        "storeConversion": 56.9,
-        "combinedConversion": 62.9
+        "totalRevenue": 12803665,
+        "totalBookings": 314,
+        "totalUniqueCustomers": 278,
+        "conversion": 59.1,
+        "bookedCustomers": 278,
+        "uniqueVisitors": 470,
+        "aov": 40776,
+        "median": 8794,
+        "storeConversion": 59.1,
+        "combinedConversion": 65.3
       },
       "paymentCollection": {
-        "received": 8485949,
-        "outstanding": 3989987,
-        "total": 12475935
+        "received": 8680307,
+        "outstanding": 3927201,
+        "total": 12607507
       },
       "topSalesRep": {
         "email": "sai prasad",
@@ -178,8 +178,8 @@
         {
           "email": "rituraj",
           "name": "Rituraj",
-          "revenue": 1189104,
-          "bookings": 26
+          "revenue": 1196654,
+          "bookings": 27
         },
         {
           "email": "mohammad aslam",
@@ -862,21 +862,21 @@
       "selectedMonth": "2026-11",
       "monthLabel": "November 2026",
       "kpis": {
-        "totalRevenue": 13159972,
-        "totalBookings": 343,
-        "totalUniqueCustomers": 304,
-        "conversion": 62.9,
-        "bookedCustomers": 304,
-        "uniqueVisitors": 483,
-        "aov": 38367.27,
-        "median": 8680,
-        "storeConversion": 56.9,
-        "combinedConversion": 62.9
+        "totalRevenue": 13291544,
+        "totalBookings": 346,
+        "totalUniqueCustomers": 307,
+        "conversion": 65.3,
+        "bookedCustomers": 307,
+        "uniqueVisitors": 470,
+        "aov": 38414.87,
+        "median": 8665.5,
+        "storeConversion": 59.1,
+        "combinedConversion": 65.3
       },
       "paymentCollection": {
-        "received": 8886783,
-        "outstanding": 4077032,
-        "total": 12963814
+        "received": 9081141,
+        "outstanding": 4014246,
+        "total": 13095386
       },
       "topSalesRep": {
         "email": "sai prasad",
@@ -900,8 +900,8 @@
         {
           "email": "rituraj",
           "name": "Rituraj",
-          "revenue": 1189104,
-          "bookings": 26
+          "revenue": 1196654,
+          "bookings": 27
         },
         {
           "email": "mohammad aslam",
@@ -3156,7 +3156,7 @@
         285,
         193,
         136,
-        106
+        108
       ],
       "sameMonthConverted": [
         1,
@@ -3252,7 +3252,7 @@
         30.5,
         29,
         14.7,
-        13.2
+        13
       ],
       "consulted": [
         3,
@@ -3300,7 +3300,7 @@
         285,
         193,
         136,
-        106
+        108
       ],
       "booked": [
         1,
@@ -3396,7 +3396,7 @@
         30.5,
         29,
         14.7,
-        13.2
+        13
       ],
       "bookingWeekVisitors": [
         4,
@@ -3444,7 +3444,7 @@
         402,
         325,
         230,
-        170
+        173
       ],
       "bookingWeekConverted": [
         2,
@@ -3540,7 +3540,7 @@
         54.2,
         61.8,
         69.6,
-        59.4
+        58.4
       ]
     },
     "monthly": {
@@ -3568,7 +3568,7 @@
         1030,
         1062,
         1111,
-        303
+        305
       ],
       "sameMonthConverted": [
         40,
@@ -3594,7 +3594,7 @@
         35.2,
         33.5,
         29.2,
-        16.2
+        16.1
       ],
       "consulted": [
         108,
@@ -3607,7 +3607,7 @@
         1030,
         1062,
         1111,
-        303
+        305
       ],
       "booked": [
         40,
@@ -3633,7 +3633,7 @@
         35.2,
         33.5,
         29.2,
-        16.2
+        16.1
       ],
       "bookingMonthVisitors": [
         112,
@@ -3646,7 +3646,7 @@
         1316,
         1419,
         1519,
-        477
+        480
       ],
       "bookingMonthConverted": [
         30,
@@ -3672,7 +3672,7 @@
         47.3,
         47.7,
         50.8,
-        57.4
+        57.1
       ]
     },
     "reps": [
@@ -3749,7 +3749,7 @@
         "name": "Pawan"
       }
     ],
-    "totalConsulted": 7746,
+    "totalConsulted": 7748,
     "totalBooked": 2793
   },
   "conversion": {
@@ -3896,7 +3896,7 @@
         402,
         325,
         230,
-        170
+        173
       ],
       "repConversionPct": [
         50,
@@ -3944,7 +3944,7 @@
         54.2,
         61.8,
         69.6,
-        59.4
+        58.4
       ],
       "peakBookings": [
         2,
@@ -4136,7 +4136,7 @@
         31,
         27,
         27,
-        31
+        32
       ],
       "avgConsultations": [
         0.2,
@@ -4184,7 +4184,7 @@
         23.7,
         19.3,
         13.9,
-        10.1
+        10.3
       ],
       "peakConsultRep": [
         "Pawan",
@@ -4328,7 +4328,7 @@
         56.7,
         65.8,
         59,
-        72.4
+        71.9
       ],
       "peakConvRep": [
         "Pawan",
@@ -4417,7 +4417,7 @@
         1316,
         1419,
         1519,
-        477
+        480
       ],
       "repConversionPct": [
         26.8,
@@ -4430,7 +4430,7 @@
         47.3,
         47.7,
         50.8,
-        57.4
+        57.1
       ],
       "peakBookings": [
         20,
@@ -4482,7 +4482,7 @@
         130,
         117,
         110,
-        53
+        54
       ],
       "avgConsultations": [
         6.6,
@@ -4495,7 +4495,7 @@
         79.8,
         86.2,
         91.3,
-        28.8
+        29.1
       ],
       "peakConsultRep": [
         "Kapil Shah",
@@ -4534,7 +4534,7 @@
         43.9,
         47.5,
         50.4,
-        156.6
+        156.4
       ],
       "peakConvRep": [
         "Pawan",
@@ -4595,11 +4595,11 @@
         "revenue": 18245498,
         "bookings": 504,
         "uniqueCustomers": 323,
-        "totalConsultationVisits": 826,
-        "uniqueConsulted": 619,
-        "convPct": 52.2,
+        "totalConsultationVisits": 827,
+        "uniqueConsulted": 620,
+        "convPct": 52.1,
         "totalBooked": 323,
-        "totalConsulted": 619
+        "totalConsulted": 620
       },
       {
         "email": "priyanshu bansal",
@@ -4667,11 +4667,11 @@
         "revenue": 11656273,
         "bookings": 363,
         "uniqueCustomers": 230,
-        "totalConsultationVisits": 653,
-        "uniqueConsulted": 505,
+        "totalConsultationVisits": 654,
+        "uniqueConsulted": 506,
         "convPct": 45.5,
         "totalBooked": 230,
-        "totalConsulted": 505
+        "totalConsulted": 506
       },
       {
         "email": "manoj l",
@@ -4691,11 +4691,11 @@
         "revenue": 7134219,
         "bookings": 233,
         "uniqueCustomers": 190,
-        "totalConsultationVisits": 838,
-        "uniqueConsulted": 660,
-        "convPct": 28.8,
+        "totalConsultationVisits": 839,
+        "uniqueConsulted": 661,
+        "convPct": 28.7,
         "totalBooked": 190,
-        "totalConsulted": 660
+        "totalConsulted": 661
       },
       {
         "email": "akash kumar",
@@ -4727,11 +4727,11 @@
         "revenue": 5858643,
         "bookings": 167,
         "uniqueCustomers": 108,
-        "totalConsultationVisits": 323,
-        "uniqueConsulted": 270,
-        "convPct": 40,
+        "totalConsultationVisits": 324,
+        "uniqueConsulted": 271,
+        "convPct": 39.9,
         "totalBooked": 108,
-        "totalConsulted": 270
+        "totalConsulted": 271
       },
       {
         "email": "suraj chettri",
@@ -4885,16 +4885,16 @@
       ]
     },
     "topConvRep": {
-      "email": "shubham roy",
-      "name": "Shubham Roy",
-      "revenue": 18245498,
-      "bookings": 504,
+      "email": "rituraj",
+      "name": "Rituraj",
+      "revenue": 19932246,
+      "bookings": 565,
       "uniqueCustomers": 323,
-      "totalConsultationVisits": 826,
-      "uniqueConsulted": 619,
-      "convPct": 52.2,
+      "totalConsultationVisits": 865,
+      "uniqueConsulted": 620,
+      "convPct": 52.1,
       "totalBooked": 323,
-      "totalConsulted": 619,
+      "totalConsulted": 620,
       "convMonthDates": [
         "2026-03-01",
         "2026-04-01",
@@ -4907,37 +4907,37 @@
         "2026-11-01"
       ],
       "convMonthValues": [
-        40.4,
-        54.1,
-        56,
-        68.6,
-        60.3,
-        61.4,
-        54.1,
-        58.8,
-        57.5
+        31.2,
+        50.5,
+        46.1,
+        60,
+        82,
+        62.1,
+        66.3,
+        80,
+        171.4
       ],
       "convMonthConsulted": [
-        57,
-        85,
-        116,
-        86,
-        63,
-        88,
-        109,
-        80,
-        40
+        93,
+        101,
+        102,
+        90,
+        61,
+        87,
+        83,
+        95,
+        14
       ],
       "convMonthBooked": [
-        23,
-        46,
-        65,
-        59,
-        38,
-        54,
-        59,
+        29,
+        51,
         47,
-        23
+        54,
+        50,
+        54,
+        55,
+        76,
+        24
       ],
       "convWeekDates": [
         "2026-03-09",
@@ -4978,118 +4978,118 @@
         "2026-11-09"
       ],
       "convWeekValues": [
-        13.3,
-        40,
-        30,
-        55,
-        53.8,
-        63.6,
-        63.6,
-        47.6,
-        73.9,
-        53.8,
+        25,
+        23.1,
+        41.9,
         55.2,
-        75.8,
-        66.7,
-        72.7,
-        118.8,
-        52.6,
-        81.8,
-        0,
-        33.3,
-        63,
-        40.7,
-        66.7,
-        61.5,
-        79.2,
-        77.8,
-        68.2,
-        34.4,
-        67.9,
-        40.6,
-        76.9,
-        69.6,
-        120,
-        71.4,
+        50,
+        47.8,
         57.7,
-        42.1,
-        66.7
+        41.7,
+        50,
+        55,
+        75.9,
+        38.5,
+        48.1,
+        66.7,
+        87,
+        65.4,
+        77.3,
+        170,
+        0,
+        61.5,
+        90.5,
+        44,
+        68.2,
+        83.3,
+        59.1,
+        76.2,
+        77.3,
+        91.3,
+        36.4,
+        93.1,
+        68.4,
+        77.3,
+        70.4,
+        100,
+        150,
+        0
       ],
       "convWeekConsulted": [
-        15,
-        25,
         20,
-        20,
-        26,
-        22,
-        22,
-        21,
-        23,
-        26,
+        39,
+        31,
         29,
-        33,
-        30,
-        22,
-        16,
-        19,
-        11,
-        0,
-        21,
-        27,
-        27,
-        15,
+        26,
+        23,
         26,
         24,
+        24,
+        20,
+        29,
+        26,
+        27,
+        21,
+        23,
+        26,
+        22,
+        10,
+        0,
+        26,
+        21,
+        25,
+        22,
         18,
         22,
-        32,
-        28,
-        32,
-        26,
+        21,
+        22,
         23,
-        10,
-        14,
-        26,
+        22,
+        29,
         19,
-        18
+        22,
+        27,
+        20,
+        10,
+        0
       ],
       "convWeekBooked": [
-        2,
-        10,
-        6,
-        11,
-        14,
-        14,
-        14,
-        10,
-        17,
-        14,
-        16,
-        25,
-        20,
-        16,
-        19,
-        10,
+        5,
         9,
-        4,
-        7,
-        17,
-        11,
-        10,
-        16,
-        19,
-        14,
-        15,
-        11,
-        19,
         13,
-        20,
         16,
-        12,
-        10,
+        13,
+        11,
         15,
+        10,
+        12,
+        11,
+        22,
+        10,
+        13,
+        14,
+        20,
+        17,
+        17,
+        17,
+        4,
+        16,
+        19,
+        11,
+        15,
+        15,
+        13,
+        16,
+        17,
+        21,
         8,
-        12
+        27,
+        13,
+        17,
+        19,
+        20,
+        15,
+        7
       ]
     }
   },
