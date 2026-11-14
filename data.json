@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T16:04:27.400Z",
+  "updatedAt": "2026-11-14T16:25:50.344Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -4027,50 +4027,50 @@
       79033497
     ],
     "sqft": {
-      "validOrders": 7348,
-      "validRevenue": 249751943,
-      "blankOrders": 342,
-      "blankRevenue": 12693464,
+      "validOrders": 6732,
+      "validRevenue": 237299133,
+      "blankOrders": 958,
+      "blankRevenue": 25146275,
       "buckets": [
         {
           "label": "0 – 500",
-          "orders": 6154,
-          "revenue": 74133847,
-          "orderPct": 83.8,
-          "revPct": 29.7,
-          "aov": 12046
+          "orders": 5650,
+          "revenue": 73136972,
+          "orderPct": 83.9,
+          "revPct": 30.8,
+          "aov": 12945
         },
         {
           "label": "500 – 1,000",
-          "orders": 550,
-          "revenue": 36795691,
+          "orders": 505,
+          "revenue": 37074073,
           "orderPct": 7.5,
-          "revPct": 14.7,
-          "aov": 66901
+          "revPct": 15.6,
+          "aov": 73414
         },
         {
           "label": "1,000 – 2,000",
-          "orders": 365,
-          "revenue": 46699410,
+          "orders": 336,
+          "revenue": 46263653,
           "orderPct": 5,
-          "revPct": 18.7,
-          "aov": 127944
+          "revPct": 19.5,
+          "aov": 137689
         },
         {
           "label": "2,000 – 10K",
-          "orders": 272,
-          "revenue": 81086216,
-          "orderPct": 3.7,
-          "revPct": 32.5,
-          "aov": 298111
+          "orders": 235,
+          "revenue": 70540072,
+          "orderPct": 3.5,
+          "revPct": 29.7,
+          "aov": 300171
         },
         {
           "label": "10K – 40K",
-          "orders": 7,
-          "revenue": 11036780,
+          "orders": 6,
+          "revenue": 10284362,
           "orderPct": 0.1,
-          "revPct": 4.4,
-          "aov": 1576683
+          "revPct": 4.3,
+          "aov": 1714060
         },
         {
           "label": "40K – 1 Lakh",
