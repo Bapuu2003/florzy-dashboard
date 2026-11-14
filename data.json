@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T09:02:38.083Z",
+  "updatedAt": "2026-11-14T09:31:20.751Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -2064,7 +2064,7 @@
         285,
         193,
         136,
-        137
+        140
       ],
       "sameMonthConverted": [
         1,
@@ -2160,7 +2160,7 @@
         30.5,
         29,
         14.7,
-        13.1
+        12.9
       ],
       "consulted": [
         3,
@@ -2208,7 +2208,7 @@
         285,
         193,
         136,
-        137
+        140
       ],
       "booked": [
         1,
@@ -2304,7 +2304,7 @@
         30.5,
         29,
         14.7,
-        13.1
+        12.9
       ],
       "bookingWeekVisitors": [
         4,
@@ -2352,7 +2352,7 @@
         402,
         325,
         230,
-        218
+        221
       ],
       "bookingWeekConverted": [
         2,
@@ -2448,7 +2448,7 @@
         54.2,
         61.8,
         69.6,
-        54.6
+        53.8
       ]
     },
     "monthly": {
@@ -2476,7 +2476,7 @@
         1030,
         1062,
         1111,
-        334
+        337
       ],
       "sameMonthConverted": [
         40,
@@ -2502,7 +2502,7 @@
         35.3,
         33.6,
         29.4,
-        15.9
+        15.7
       ],
       "consulted": [
         108,
@@ -2515,7 +2515,7 @@
         1030,
         1062,
         1111,
-        334
+        337
       ],
       "booked": [
         40,
@@ -2541,7 +2541,7 @@
         35.3,
         33.6,
         29.4,
-        15.9
+        15.7
       ],
       "bookingMonthVisitors": [
         112,
@@ -2554,7 +2554,7 @@
         1316,
         1419,
         1519,
-        520
+        523
       ],
       "bookingMonthConverted": [
         30,
@@ -2580,7 +2580,7 @@
         47.3,
         47.7,
         50.8,
-        55.8
+        55.4
       ]
     },
     "reps": [
@@ -2657,7 +2657,7 @@
         "name": "Pawan"
       }
     ],
-    "totalConsulted": 7777,
+    "totalConsulted": 7780,
     "totalBooked": 2802
   },
   "conversion": {
@@ -2804,7 +2804,7 @@
         402,
         325,
         230,
-        218
+        221
       ],
       "repConversionPct": [
         50,
@@ -2852,7 +2852,7 @@
         54.2,
         61.8,
         69.6,
-        54.6
+        53.8
       ],
       "peakBookings": [
         2,
@@ -3092,7 +3092,7 @@
         23.7,
         19.3,
         13.9,
-        13.1
+        13.3
       ],
       "peakConsultRep": [
         "Pawan",
@@ -3236,7 +3236,7 @@
         56.7,
         65.8,
         59,
-        59.3
+        58.9
       ],
       "peakConvRep": [
         "Pawan",
@@ -3325,7 +3325,7 @@
         1316,
         1419,
         1519,
-        520
+        523
       ],
       "repConversionPct": [
         26.8,
@@ -3338,7 +3338,7 @@
         47.3,
         47.7,
         50.8,
-        55.8
+        55.4
       ],
       "peakBookings": [
         20,
@@ -3403,7 +3403,7 @@
         79.8,
         86.2,
         91.3,
-        31.6
+        31.8
       ],
       "peakConsultRep": [
         "Kapil Shah",
@@ -3442,7 +3442,7 @@
         43.9,
         47.5,
         50.4,
-        127.4
+        127.2
       ],
       "peakConvRep": [
         "Pawan",
@@ -3503,11 +3503,11 @@
         "revenue": 18261041,
         "bookings": 505,
         "uniqueCustomers": 324,
-        "totalConsultationVisits": 831,
-        "uniqueConsulted": 622,
-        "convPct": 52.1,
+        "totalConsultationVisits": 832,
+        "uniqueConsulted": 623,
+        "convPct": 52,
         "totalBooked": 324,
-        "totalConsulted": 622
+        "totalConsulted": 623
       },
       {
         "email": "priyanshu bansal",
@@ -3515,11 +3515,11 @@
         "revenue": 16508672,
         "bookings": 443,
         "uniqueCustomers": 260,
-        "totalConsultationVisits": 788,
-        "uniqueConsulted": 563,
-        "convPct": 46.2,
+        "totalConsultationVisits": 789,
+        "uniqueConsulted": 564,
+        "convPct": 46.1,
         "totalBooked": 260,
-        "totalConsulted": 563
+        "totalConsulted": 564
       },
       {
         "email": "mitrabhanu padhi",
@@ -3635,11 +3635,11 @@
         "revenue": 6141098,
         "bookings": 169,
         "uniqueCustomers": 110,
-        "totalConsultationVisits": 329,
-        "uniqueConsulted": 275,
-        "convPct": 40,
+        "totalConsultationVisits": 330,
+        "uniqueConsulted": 276,
+        "convPct": 39.9,
         "totalBooked": 110,
-        "totalConsulted": 275
+        "totalConsulted": 276
       },
       {
         "email": "suraj chettri",
