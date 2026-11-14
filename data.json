@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T12:01:20.144Z",
+  "updatedAt": "2026-11-14T12:30:23.370Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -17,35 +17,35 @@
   "overviewStore": {
     "monthLabel": "All Time",
     "kpis": {
-      "totalRevenue": 255487996,
+      "totalRevenue": 255420464,
       "totalBookings": 7097,
       "totalUniqueCustomers": 3936,
       "bookedCustomers": 3574,
       "uniqueVisitors": 9332,
       "conversion": 38.3,
-      "aov": 35999,
+      "aov": 35990,
       "median": 9685
     },
     "paymentCollection": {
       "received": 240449792,
-      "outstanding": 15127920
+      "outstanding": 15060388
     }
   },
   "overviewCombined": {
     "monthLabel": "All Time",
     "kpis": {
-      "totalRevenue": 262512939,
+      "totalRevenue": 262445407,
       "totalBookings": 7690,
       "totalUniqueCustomers": 4299,
       "bookedCustomers": 3633,
       "uniqueVisitors": 9332,
       "conversion": 38.9,
-      "aov": 34137,
+      "aov": 34128,
       "median": 9003
     },
     "paymentCollection": {
       "received": 247383601,
-      "outstanding": 15219056
+      "outstanding": 15151524
     }
   },
   "overviewHistoryStore": {
@@ -491,7 +491,7 @@
       573153,
       1256820,
       1554600,
-      955381,
+      887849,
       960563,
       860293,
       1351319.15,
@@ -1451,7 +1451,7 @@
         573153,
         1256820,
         1554600,
-        955381,
+        887849,
         960563,
         860293,
         1351319.15,
@@ -1568,7 +1568,7 @@
         7339912.199999999,
         6610228.68,
         9144836.82,
-        7977158,
+        7909626,
         6182766.9,
         6498908.699999999
       ],
@@ -1620,7 +1620,7 @@
         32477,
         29379,
         40286,
-        38168,
+        37845,
         37700,
         51173
       ],
@@ -1704,7 +1704,7 @@
         29896943,
         43500433.48,
         36063091.2,
-        13637056.6
+        13569524.6
       ],
       "aov": [
         18312,
@@ -1718,7 +1718,7 @@
         45230,
         58944,
         43766,
-        45306
+        45081
       ],
       "uniqueCustomers": [
         54,
@@ -1750,9 +1750,9 @@
       ]
     },
     "stats": {
-      "totalRev": 255487996.45000002,
+      "totalRev": 255420464.45000002,
       "thisWeekRev": 6498908.699999999,
-      "thisMonthRev": 13637056.6,
+      "thisMonthRev": 13569524.6,
       "totalBookings": 7097,
       "thisWeekBook": 132,
       "thisMonthBook": 341
@@ -3476,7 +3476,7 @@
       {
         "email": "sagar modugu",
         "name": "Sagar Modugu",
-        "revenue": 20362859,
+        "revenue": 20295327,
         "bookings": 604,
         "uniqueCustomers": 337,
         "totalConsultationVisits": 994,
@@ -4013,63 +4013,63 @@
     "counts": [
       4047,
       1568,
-      852,
+      853,
       579,
-      460,
+      459,
       184
     ],
     "revenues": [
       17447339,
       25276522,
-      30472196,
+      30515194,
       40686759,
-      69596626,
+      69486096,
       79033497
     ],
     "sqft": {
-      "validOrders": 7348,
-      "validRevenue": 249819475,
-      "blankOrders": 342,
-      "blankRevenue": 12693464,
+      "validOrders": 7257,
+      "validRevenue": 247766504,
+      "blankOrders": 433,
+      "blankRevenue": 14678903,
       "buckets": [
         {
           "label": "0 – 500",
-          "orders": 6154,
-          "revenue": 74201379,
-          "orderPct": 83.8,
-          "revPct": 29.7,
-          "aov": 12057
+          "orders": 6091,
+          "revenue": 74760928,
+          "orderPct": 83.9,
+          "revPct": 30.2,
+          "aov": 12274
         },
         {
           "label": "500 – 1,000",
-          "orders": 550,
-          "revenue": 36795691,
+          "orders": 543,
+          "revenue": 37371897,
           "orderPct": 7.5,
-          "revPct": 14.7,
-          "aov": 66901
+          "revPct": 15.1,
+          "aov": 68825
         },
         {
           "label": "1,000 – 2,000",
-          "orders": 365,
-          "revenue": 46699410,
-          "orderPct": 5,
-          "revPct": 18.7,
-          "aov": 127944
+          "orders": 357,
+          "revenue": 46791686,
+          "orderPct": 4.9,
+          "revPct": 18.9,
+          "aov": 131069
         },
         {
           "label": "2,000 – 10K",
-          "orders": 272,
-          "revenue": 81086216,
-          "orderPct": 3.7,
-          "revPct": 32.5,
-          "aov": 298111
+          "orders": 259,
+          "revenue": 77805214,
+          "orderPct": 3.6,
+          "revPct": 31.4,
+          "aov": 300406
         },
         {
           "label": "10K – 40K",
           "orders": 7,
           "revenue": 11036780,
           "orderPct": 0.1,
-          "revPct": 4.4,
+          "revPct": 4.5,
           "aov": 1576683
         },
         {
