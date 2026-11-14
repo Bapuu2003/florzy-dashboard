@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T12:54:54.709Z",
+  "updatedAt": "2026-11-14T13:34:50.656Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -2064,7 +2064,7 @@
         285,
         193,
         136,
-        151
+        152
       ],
       "sameMonthConverted": [
         1,
@@ -2208,7 +2208,7 @@
         285,
         193,
         136,
-        151
+        152
       ],
       "booked": [
         1,
@@ -2352,7 +2352,7 @@
         402,
         325,
         230,
-        244
+        247
       ],
       "bookingWeekConverted": [
         2,
@@ -2448,7 +2448,7 @@
         54.2,
         61.8,
         69.6,
-        51.2
+        50.6
       ]
     },
     "monthly": {
@@ -2476,7 +2476,7 @@
         1030,
         1062,
         1111,
-        348
+        349
       ],
       "sameMonthConverted": [
         40,
@@ -2502,7 +2502,7 @@
         35.3,
         33.6,
         29.4,
-        16.4
+        16.3
       ],
       "consulted": [
         108,
@@ -2515,7 +2515,7 @@
         1030,
         1062,
         1111,
-        348
+        349
       ],
       "booked": [
         40,
@@ -2541,7 +2541,7 @@
         35.3,
         33.6,
         29.4,
-        16.4
+        16.3
       ],
       "bookingMonthVisitors": [
         112,
@@ -2554,7 +2554,7 @@
         1316,
         1419,
         1519,
-        540
+        542
       ],
       "bookingMonthConverted": [
         30,
@@ -2580,7 +2580,7 @@
         47.3,
         47.7,
         50.8,
-        54.6
+        54.4
       ]
     },
     "reps": [
@@ -2657,7 +2657,7 @@
         "name": "Pawan"
       }
     ],
-    "totalConsulted": 7791,
+    "totalConsulted": 7792,
     "totalBooked": 2806
   },
   "conversion": {
@@ -2804,7 +2804,7 @@
         402,
         325,
         230,
-        244
+        247
       ],
       "repConversionPct": [
         50,
@@ -2852,7 +2852,7 @@
         54.2,
         61.8,
         69.6,
-        51.2
+        50.6
       ],
       "peakBookings": [
         2,
@@ -3092,7 +3092,7 @@
         23.7,
         19.3,
         13.9,
-        14.6
+        14.8
       ],
       "peakConsultRep": [
         "Pawan",
@@ -3236,7 +3236,7 @@
         56.7,
         65.8,
         59,
-        62.6
+        61.5
       ],
       "peakConvRep": [
         "Pawan",
@@ -3325,7 +3325,7 @@
         1316,
         1419,
         1519,
-        540
+        542
       ],
       "repConversionPct": [
         26.8,
@@ -3338,7 +3338,7 @@
         47.3,
         47.7,
         50.8,
-        54.6
+        54.4
       ],
       "peakBookings": [
         20,
@@ -3403,7 +3403,7 @@
         79.8,
         86.2,
         91.3,
-        32.8
+        32.9
       ],
       "peakConsultRep": [
         "Kapil Shah",
@@ -3442,7 +3442,7 @@
         43.9,
         47.5,
         50.4,
-        159.9
+        158.2
       ],
       "peakConvRep": [
         "Pawan",
@@ -3515,7 +3515,7 @@
         "revenue": 16508672,
         "bookings": 443,
         "uniqueCustomers": 260,
-        "totalConsultationVisits": 791,
+        "totalConsultationVisits": 792,
         "uniqueConsulted": 566,
         "convPct": 45.9,
         "totalBooked": 260,
@@ -3647,11 +3647,11 @@
         "revenue": 5748194,
         "bookings": 181,
         "uniqueCustomers": 116,
-        "totalConsultationVisits": 410,
-        "uniqueConsulted": 334,
-        "convPct": 34.7,
+        "totalConsultationVisits": 411,
+        "uniqueConsulted": 335,
+        "convPct": 34.6,
         "totalBooked": 116,
-        "totalConsulted": 334
+        "totalConsulted": 335
       },
       {
         "email": "nesar r",
@@ -3659,11 +3659,11 @@
         "revenue": 1742285,
         "bookings": 76,
         "uniqueCustomers": 56,
-        "totalConsultationVisits": 177,
-        "uniqueConsulted": 149,
-        "convPct": 37.6,
+        "totalConsultationVisits": 178,
+        "uniqueConsulted": 150,
+        "convPct": 37.3,
         "totalBooked": 56,
-        "totalConsulted": 149
+        "totalConsulted": 150
       }
     ],
     "topRevRep": {
