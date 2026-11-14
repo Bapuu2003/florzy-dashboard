@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T17:39:13.338Z",
+  "updatedAt": "2026-11-14T18:59:21.006Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -515,8 +515,8 @@
     "lastMonday": "2026-11-02",
     "windowStart": "2026-10-26",
     "windowEnd": "2026-11-15",
-    "today": "2026-11-14",
-    "todayRevenue": 838826.85,
+    "today": "2026-11-15",
+    "todayRevenue": 0,
     "mondays": [
       "2026-11-09",
       "2026-11-02",
@@ -4027,50 +4027,50 @@
       79033497
     ],
     "sqft": {
-      "validOrders": 7365,
-      "validRevenue": 250331645,
-      "blankOrders": 342,
-      "blankRevenue": 12693464,
+      "validOrders": 5548,
+      "validRevenue": 191546759,
+      "blankOrders": 2159,
+      "blankRevenue": 71478350,
       "buckets": [
         {
           "label": "0 – 500",
-          "orders": 6167,
-          "revenue": 74363721,
-          "orderPct": 83.7,
-          "revPct": 29.7,
-          "aov": 12058
+          "orders": 4612,
+          "revenue": 55699627,
+          "orderPct": 83.1,
+          "revPct": 29.1,
+          "aov": 12077
         },
         {
           "label": "500 – 1,000",
-          "orders": 553,
-          "revenue": 36993078,
-          "orderPct": 7.5,
-          "revPct": 14.8,
-          "aov": 66895
+          "orders": 432,
+          "revenue": 28682134,
+          "orderPct": 7.8,
+          "revPct": 15,
+          "aov": 66394
         },
         {
           "label": "1,000 – 2,000",
-          "orders": 366,
-          "revenue": 46851850,
-          "orderPct": 5,
-          "revPct": 18.7,
-          "aov": 128011
+          "orders": 289,
+          "revenue": 36717962,
+          "orderPct": 5.2,
+          "revPct": 19.2,
+          "aov": 127052
         },
         {
           "label": "2,000 – 10K",
-          "orders": 272,
-          "revenue": 81086216,
-          "orderPct": 3.7,
-          "revPct": 32.4,
-          "aov": 298111
+          "orders": 209,
+          "revenue": 60162674,
+          "orderPct": 3.8,
+          "revPct": 31.4,
+          "aov": 287860
         },
         {
           "label": "10K – 40K",
-          "orders": 7,
-          "revenue": 11036780,
+          "orders": 6,
+          "revenue": 10284362,
           "orderPct": 0.1,
-          "revPct": 4.4,
-          "aov": 1576683
+          "revPct": 5.4,
+          "aov": 1714060
         },
         {
           "label": "40K – 1 Lakh",
