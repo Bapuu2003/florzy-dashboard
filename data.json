@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T07:37:32.210Z",
+  "updatedAt": "2026-11-14T08:04:36.897Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -2056,7 +2056,7 @@
         285,
         193,
         136,
-        132
+        133
       ],
       "sameMonthConverted": [
         1,
@@ -2152,7 +2152,7 @@
         30.5,
         29,
         14.7,
-        13.6
+        13.5
       ],
       "consulted": [
         3,
@@ -2200,7 +2200,7 @@
         285,
         193,
         136,
-        132
+        133
       ],
       "booked": [
         1,
@@ -2296,7 +2296,7 @@
         30.5,
         29,
         14.7,
-        13.6
+        13.5
       ],
       "bookingWeekVisitors": [
         4,
@@ -2344,7 +2344,7 @@
         402,
         325,
         230,
-        210
+        213
       ],
       "bookingWeekConverted": [
         2,
@@ -2440,7 +2440,7 @@
         54.2,
         61.8,
         69.6,
-        56.7
+        55.9
       ]
     },
     "monthly": {
@@ -2468,7 +2468,7 @@
         1030,
         1062,
         1111,
-        329
+        330
       ],
       "sameMonthConverted": [
         40,
@@ -2507,7 +2507,7 @@
         1030,
         1062,
         1111,
-        329
+        330
       ],
       "booked": [
         40,
@@ -2546,7 +2546,7 @@
         1316,
         1419,
         1519,
-        513
+        516
       ],
       "bookingMonthConverted": [
         30,
@@ -2572,7 +2572,7 @@
         47.3,
         47.7,
         50.8,
-        56.5
+        56.2
       ]
     },
     "reps": [
@@ -2649,7 +2649,7 @@
         "name": "Pawan"
       }
     ],
-    "totalConsulted": 7772,
+    "totalConsulted": 7773,
     "totalBooked": 2802
   },
   "conversion": {
@@ -2796,7 +2796,7 @@
         402,
         325,
         230,
-        210
+        213
       ],
       "repConversionPct": [
         50,
@@ -2844,7 +2844,7 @@
         54.2,
         61.8,
         69.6,
-        56.7
+        55.9
       ],
       "peakBookings": [
         2,
@@ -3084,7 +3084,7 @@
         23.7,
         19.3,
         13.9,
-        12.6
+        12.8
       ],
       "peakConsultRep": [
         "Pawan",
@@ -3228,7 +3228,7 @@
         56.7,
         65.8,
         59,
-        62.8
+        60.2
       ],
       "peakConvRep": [
         "Pawan",
@@ -3317,7 +3317,7 @@
         1316,
         1419,
         1519,
-        513
+        516
       ],
       "repConversionPct": [
         26.8,
@@ -3330,7 +3330,7 @@
         47.3,
         47.7,
         50.8,
-        56.5
+        56.2
       ],
       "peakBookings": [
         20,
@@ -3395,7 +3395,7 @@
         79.8,
         86.2,
         91.3,
-        31.2
+        31.4
       ],
       "peakConsultRep": [
         "Kapil Shah",
@@ -3434,7 +3434,7 @@
         43.9,
         47.5,
         50.4,
-        131.8
+        127.7
       ],
       "peakConvRep": [
         "Pawan",
@@ -3507,7 +3507,7 @@
         "revenue": 16508672,
         "bookings": 443,
         "uniqueCustomers": 260,
-        "totalConsultationVisits": 787,
+        "totalConsultationVisits": 788,
         "uniqueConsulted": 563,
         "convPct": 46.2,
         "totalBooked": 260,
@@ -3567,11 +3567,11 @@
         "revenue": 11664213,
         "bookings": 364,
         "uniqueCustomers": 230,
-        "totalConsultationVisits": 658,
-        "uniqueConsulted": 510,
-        "convPct": 45.1,
+        "totalConsultationVisits": 659,
+        "uniqueConsulted": 511,
+        "convPct": 45,
         "totalBooked": 230,
-        "totalConsulted": 510
+        "totalConsulted": 511
       },
       {
         "email": "manoj l",
@@ -3651,11 +3651,11 @@
         "revenue": 1742285,
         "bookings": 76,
         "uniqueCustomers": 56,
-        "totalConsultationVisits": 175,
-        "uniqueConsulted": 147,
-        "convPct": 38.1,
+        "totalConsultationVisits": 176,
+        "uniqueConsulted": 148,
+        "convPct": 37.8,
         "totalBooked": 56,
-        "totalConsulted": 147
+        "totalConsulted": 148
       }
     ],
     "topRevRep": {
