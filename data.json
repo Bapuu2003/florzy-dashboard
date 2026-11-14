@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T15:26:29.420Z",
+  "updatedAt": "2026-11-14T16:04:27.400Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -4027,49 +4027,49 @@
       79033497
     ],
     "sqft": {
-      "validOrders": 7135,
-      "validRevenue": 243108486,
-      "blankOrders": 555,
-      "blankRevenue": 19336921,
+      "validOrders": 7348,
+      "validRevenue": 249751943,
+      "blankOrders": 342,
+      "blankRevenue": 12693464,
       "buckets": [
         {
           "label": "0 – 500",
-          "orders": 6002,
-          "revenue": 74286748,
-          "orderPct": 84.1,
-          "revPct": 30.6,
-          "aov": 12377
+          "orders": 6154,
+          "revenue": 74133847,
+          "orderPct": 83.8,
+          "revPct": 29.7,
+          "aov": 12046
         },
         {
           "label": "500 – 1,000",
-          "orders": 523,
-          "revenue": 36009901,
-          "orderPct": 7.3,
-          "revPct": 14.8,
-          "aov": 68853
+          "orders": 550,
+          "revenue": 36795691,
+          "orderPct": 7.5,
+          "revPct": 14.7,
+          "aov": 66901
         },
         {
           "label": "1,000 – 2,000",
-          "orders": 351,
-          "revenue": 46357874,
-          "orderPct": 4.9,
-          "revPct": 19.1,
-          "aov": 132074
+          "orders": 365,
+          "revenue": 46699410,
+          "orderPct": 5,
+          "revPct": 18.7,
+          "aov": 127944
         },
         {
           "label": "2,000 – 10K",
-          "orders": 252,
-          "revenue": 75417183,
-          "orderPct": 3.5,
-          "revPct": 31,
-          "aov": 299275
+          "orders": 272,
+          "revenue": 81086216,
+          "orderPct": 3.7,
+          "revPct": 32.5,
+          "aov": 298111
         },
         {
           "label": "10K – 40K",
           "orders": 7,
           "revenue": 11036780,
           "orderPct": 0.1,
-          "revPct": 4.5,
+          "revPct": 4.4,
           "aov": 1576683
         },
         {
