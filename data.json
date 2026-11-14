@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T18:59:21.006Z",
+  "updatedAt": "2026-11-14T19:26:36.788Z",
   "availableMonths": [
     "2026-11",
     "2026-10",
@@ -4027,50 +4027,50 @@
       79033497
     ],
     "sqft": {
-      "validOrders": 5548,
-      "validRevenue": 191546759,
-      "blankOrders": 2159,
-      "blankRevenue": 71478350,
+      "validOrders": 7261,
+      "validRevenue": 248049633,
+      "blankOrders": 446,
+      "blankRevenue": 14975476,
       "buckets": [
         {
           "label": "0 – 500",
-          "orders": 4612,
-          "revenue": 55699627,
-          "orderPct": 83.1,
-          "revPct": 29.1,
-          "aov": 12077
+          "orders": 6096,
+          "revenue": 75029928,
+          "orderPct": 84,
+          "revPct": 30.2,
+          "aov": 12308
         },
         {
           "label": "500 – 1,000",
-          "orders": 432,
-          "revenue": 28682134,
-          "orderPct": 7.8,
-          "revPct": 15,
-          "aov": 66394
+          "orders": 543,
+          "revenue": 37467540,
+          "orderPct": 7.5,
+          "revPct": 15.1,
+          "aov": 69001
         },
         {
           "label": "1,000 – 2,000",
-          "orders": 289,
-          "revenue": 36717962,
-          "orderPct": 5.2,
-          "revPct": 19.2,
-          "aov": 127052
+          "orders": 357,
+          "revenue": 47347135,
+          "orderPct": 4.9,
+          "revPct": 19.1,
+          "aov": 132625
         },
         {
           "label": "2,000 – 10K",
-          "orders": 209,
-          "revenue": 60162674,
-          "orderPct": 3.8,
-          "revPct": 31.4,
-          "aov": 287860
+          "orders": 258,
+          "revenue": 77168251,
+          "orderPct": 3.6,
+          "revPct": 31.1,
+          "aov": 299102
         },
         {
           "label": "10K – 40K",
-          "orders": 6,
-          "revenue": 10284362,
+          "orders": 7,
+          "revenue": 11036780,
           "orderPct": 0.1,
-          "revPct": 5.4,
-          "aov": 1714060
+          "revPct": 4.4,
+          "aov": 1576683
         },
         {
           "label": "40K – 1 Lakh",
